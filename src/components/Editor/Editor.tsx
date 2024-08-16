@@ -69,7 +69,7 @@ const extensions = [
   Highlight,
   BulletList,
   OrderedList,
-  TextAlign.configure({ types: ['heading', 'paragraph'], spacer: true }),
+  TextAlign.configure({ types: ['heading', 'paragraph'], spacer: true, bubble: true }),
   Indent,
   LineHeight,
   TaskList.configure({
@@ -154,6 +154,7 @@ function Editor() {
         >
           <button onClick={() => locale.setLang('vi')}>Vietnamese</button>
           <button onClick={() => locale.setLang('en')}>English</button>
+          <button onClick={() => locale.setLang('zh_CN')}>Chinese</button>
           <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
             {theme === 'dark' ? 'Light' : 'Dark'}
           </button>
@@ -184,6 +185,7 @@ function Editor() {
 
         {typeof content === 'string' && (
           <textarea
+            readOnly
             style={{
               marginTop: 20,
               height: 500,
