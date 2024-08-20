@@ -39,7 +39,9 @@ import RcTiptapEditor, {
   locale,
   FontFamily,
   Iframe,
-  SearchAndReplace
+  SearchAndReplace,
+  Emoji,
+  Katex,
 } from 'reactjs-tiptap-editor';
 
 import 'reactjs-tiptap-editor/style.css';
@@ -55,7 +57,8 @@ const extensions = [
     },
   }),
   History,
-  FormatPainter,
+  SearchAndReplace,
+  FormatPainter.configure({ spacer: true }),
   Clear,
   FontFamily,
   Heading.configure({ spacer: true }),
@@ -84,30 +87,33 @@ const extensions = [
     upload: (files: File) => {
       return new Promise((resolve) => {
         setTimeout(() => {
-          resolve(URL.createObjectURL(files));
-        }, 500);
-      });
+          resolve(URL.createObjectURL(files))
+        }, 500)
+      })
     },
   }),
   Video,
   VideoUpload.configure({
     upload: (files: File[]) => {
-      const f = files.map((file) => ({
+      const f = files.map(file => ({
         src: URL.createObjectURL(file),
         alt: file.name,
-      }));
-      return Promise.resolve(f);
+      }))
+      return Promise.resolve(f)
     },
   }),
   Blockquote,
   SlashCommand,
   HorizontalRule,
-  Code,
+  Code.configure({
+    toolbar: false,
+  }),
   CodeBlock.configure({ defaultTheme: 'dracula' }),
   ColumnToolbar,
   Table,
   Iframe.configure({ spacer: true }),
-  SearchAndReplace
+  Emoji,
+  Katex,
 ];
 
 const DEFAULT = `<h1 style="text-align: center">Rich Text Editor</h1><p>A modern WYSIWYG rich text editor based on <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://github.com/scrumpy/tiptap">tiptap</a> and <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn ui</a> for Reactjs</p><p></p><p style="text-align: center"></p><p style="text-align: center"><img height="auto" src="https://picsum.photos/1920/1080.webp?t=1" width="500"></p><p></p><div data-type="horizontalRule"><hr></div><h2>Demo</h2><p>👉<a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://reactjs-tiptap-editor.vercel.app/">Demo</a></p><h2>Features</h2><ul><li><p>Use <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn ui</a> components</p></li><li><p>Markdown support</p></li><li><p>TypeScript support</p></li><li><p>I18n support</p></li><li><p>React support</p></li><li><p>Slash Commands</p></li><li><p>Multi Column</p></li><li><p>TailwindCss</p></li><li><p>Support emoji</p></li><li><p>Support iframe</p></li></ul><h2>Installation</h2><pre><code class="language-bash">pnpm add reactjs-tiptap-editor</code></pre><p></p>`;
@@ -141,9 +147,6 @@ function Editor() {
         padding: '0 20px',
       }}
     >
-      <button onClick={() => {
-        console.log(refEditor.current.editor.getJSON());
-      }}>CLick</button>
       <div
         style={{
           maxWidth: 1024,
