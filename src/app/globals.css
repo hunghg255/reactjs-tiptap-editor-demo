@@ -88,3 +88,20 @@ body {
 body {
 
 }
+
+
+.buttonWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.buttonWrap button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d1d2d2;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}

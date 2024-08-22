@@ -159,6 +159,7 @@ function Editor() {
             gap: '12px',
             marginBottom: 10,
           }}
+          className="buttonWrap"
         >
           <button onClick={() => locale.setLang('vi')}>Vietnamese</button>
           <button onClick={() => locale.setLang('en')}>English</button>
