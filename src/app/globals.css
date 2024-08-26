@@ -105,3 +105,7 @@ body {
   color: rgb(0, 0, 0);
   cursor: pointer;
 }
+
+.dark body {
+  background-color: #0a0b0b;
+}
