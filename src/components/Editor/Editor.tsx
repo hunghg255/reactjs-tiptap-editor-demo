@@ -202,7 +202,7 @@ function Editor() {
         <RcTiptapEditor
         ref={refEditor}
           output='html'
-          content={content as any}
+          content={DEFAULT as any}
           onChangeContent={onValueChange}
           extensions={extensions}
           dark={theme === 'dark'}
