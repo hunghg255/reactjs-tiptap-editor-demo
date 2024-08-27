@@ -45,6 +45,7 @@ import RcTiptapEditor, {
   Video,
   VideoUpload,
   locale,
+  TableOfContents
 } from 'reactjs-tiptap-editor';
 
 import 'reactjs-tiptap-editor/style.css';
@@ -61,6 +62,7 @@ const extensions = [
   }),
   History,
   SearchAndReplace,
+  TableOfContents,
   FormatPainter.configure({ spacer: true }),
   Clear,
   FontFamily,
