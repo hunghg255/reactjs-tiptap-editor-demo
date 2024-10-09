@@ -49,7 +49,8 @@ import RcTiptapEditor, {
   Excalidraw,
   TextDirection,
   Mention,
-  Attachment
+  Attachment,
+  ImageGif
 } from 'reactjs-tiptap-editor';
 
 import 'reactjs-tiptap-editor/style.css';
@@ -145,13 +146,16 @@ const extensions = [
       return Promise.resolve(f)
     },
   }),
-  Blockquote,
+  ImageGif.configure({
+    GIPHY_API_KEY: process.env.NEXT_PUBLIC_GIPHY_API_KEY
+  }),
+  Blockquote.configure({ spacer: true }),
   SlashCommand,
   HorizontalRule,
   Code.configure({
     toolbar: false,
   }),
-  // CodeBlock.configure({ defaultTheme: 'dracula' }),
+  CodeBlock.configure({ defaultTheme: 'dracula' }),
   ColumnActionButton,
   Table,
   Iframe,
