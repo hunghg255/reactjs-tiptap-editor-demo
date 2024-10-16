@@ -248,13 +248,6 @@ function Editor() {
           disabled={disable}
         />
 
-        <button
-        onClick={() => {
-          console.log(refEditor);
-          refEditor.current?.editor?.commands?.clearContent();
-        }}
-        >Empty</button>
-
         {typeof content === 'string' && (
           <textarea
             readOnly
