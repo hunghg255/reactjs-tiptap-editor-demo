@@ -241,12 +241,19 @@ function Editor() {
         <RcTiptapEditor
         ref={refEditor}
           output='html'
-          content={DEFAULT as any}
+          content={DEFAULT}
           onChangeContent={onValueChange}
           extensions={extensions}
           dark={theme === 'dark'}
           disabled={disable}
         />
+
+        <button
+        onClick={() => {
+          console.log(refEditor);
+          refEditor.current?.editor?.commands?.clearContent();
+        }}
+        >Empty</button>
 
         {typeof content === 'string' && (
           <textarea
