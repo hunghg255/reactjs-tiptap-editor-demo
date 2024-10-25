@@ -26,7 +26,6 @@ import RcTiptapEditor, {
   HorizontalRule,
   Iframe,
   Image,
-  ImageUpload,
   ImportWord,
   Indent,
   Italic,
@@ -43,7 +42,6 @@ import RcTiptapEditor, {
   TextAlign,
   Underline,
   Video,
-  VideoUpload,
   locale,
   TableOfContents,
   Excalidraw,
@@ -109,8 +107,7 @@ const extensions = [
     },
   }),
   Link,
-  Image,
-  ImageUpload.configure({
+  Image.configure({
     upload: (files: File) => {
       return new Promise((resolve) => {
         setTimeout(() => {
@@ -119,14 +116,13 @@ const extensions = [
       })
     },
   }),
-  Video,
-  VideoUpload.configure({
-    upload: (files: File[]) => {
-      const f = files.map(file => ({
-        src: URL.createObjectURL(file),
-        alt: file.name,
-      }))
-      return Promise.resolve(f)
+  Video.configure({
+    upload: (files: File) => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(URL.createObjectURL(files))
+        }, 500)
+      })
     },
   }),
   ImageGif.configure({
