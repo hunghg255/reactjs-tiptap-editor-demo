@@ -170,3 +170,15 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.textarea {
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.dark .textarea {
+  border: 1px solid #666;
+  background: #0a0b0b;
+  color: #fff;
+}

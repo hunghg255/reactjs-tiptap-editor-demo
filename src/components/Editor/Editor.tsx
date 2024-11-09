@@ -263,16 +263,14 @@ function Editor() {
 
         {typeof content === 'string' && (
           <textarea
+            className="textarea"
             readOnly
             style={{
               marginTop: 20,
               height: 500,
               width: '100%',
-              border: '1px solid #ccc',
               borderRadius: 4,
               padding: 10,
-              background: '#f9f9f9',
-              color: '#333',
             }}
             value={content}
           />
