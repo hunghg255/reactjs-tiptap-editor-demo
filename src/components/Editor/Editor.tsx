@@ -53,7 +53,10 @@ import RcTiptapEditor, {
   Twitter
 } from 'reactjs-tiptap-editor';
 
+import 'katex/dist/katex.min.css';
+
 import 'reactjs-tiptap-editor/style.css';
+
 
 function convertBase64ToBlob(base64: string) {
   const arr = base64.split(',')
