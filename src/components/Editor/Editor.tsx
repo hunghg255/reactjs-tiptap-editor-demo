@@ -4,7 +4,11 @@
 /* eslint-disable quotes */
 import React, { useCallback, useState } from 'react';
 
-import RcTiptapEditor, {
+import RcTiptapEditor from 'reactjs-tiptap-editor';
+
+import { locale } from 'reactjs-tiptap-editor/locale-bundle';
+
+import {
   BaseKit,
   Blockquote,
   Bold,
@@ -42,7 +46,6 @@ import RcTiptapEditor, {
   TextAlign,
   Underline,
   Video,
-  locale,
   TableOfContents,
   Excalidraw,
   TextDirection,
@@ -51,7 +54,7 @@ import RcTiptapEditor, {
   ImageGif,
   Mermaid,
   Twitter
-} from 'reactjs-tiptap-editor';
+} from 'reactjs-tiptap-editor/extension-bundle';
 
 import 'katex/dist/katex.min.css';
 
