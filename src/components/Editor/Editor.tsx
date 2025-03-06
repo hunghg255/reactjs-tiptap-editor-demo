@@ -115,6 +115,7 @@ const extensions = [
   }),
   Link,
   Image.configure({
+    toolbar: false,
     upload: (files: File) => {
       return new Promise((resolve) => {
         setTimeout(() => {
