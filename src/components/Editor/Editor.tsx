@@ -53,10 +53,12 @@ import {
   Attachment,
   ImageGif,
   Mermaid,
-  Twitter
+  Twitter,
+  Drawer
 } from 'reactjs-tiptap-editor/extension-bundle';
 
 import 'katex/dist/katex.min.css';
+import 'easydrawer/styles.css';
 
 import 'reactjs-tiptap-editor/style.css';
 
@@ -187,6 +189,20 @@ const extensions = [
     },
   }),
   Twitter,
+  Drawer.configure({
+    upload: (file: any) => {
+      // fake upload return base 64
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
+
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          const blob = convertBase64ToBlob(reader.result as string)
+          resolve(URL.createObjectURL(blob))
+        }, 300)
+      })
+    },
+  }),
 ];
 
 

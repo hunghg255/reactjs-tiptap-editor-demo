@@ -15,8 +15,8 @@ dependencies:
     specifier: ^19.0.0
     version: 19.0.0(react@19.0.0)
   reactjs-tiptap-editor:
-    specifier: ^0.2.5
-    version: 0.2.5(@types/react-dom@19.0.4)(@types/react@19.0.10)(alien-signals@1.0.4)(react-dom@19.0.0)(react@19.0.0)(y-prosemirror@1.2.17)
+    specifier: ^0.2.6
+    version: 0.2.6(@types/react-dom@19.0.4)(@types/react@19.0.10)(alien-signals@1.0.4)(react-dom@19.0.0)(react@19.0.0)
 
 devDependencies:
   '@types/node':
@@ -2603,6 +2603,10 @@ packages:
       is-windows: 1.0.2
     dev: false
 
+  /bezier-js@6.1.4:
+    resolution: {integrity: sha512-PA0FW9ZpcHbojUCMu28z9Vg/fNkwTj5YhusSAjHHDfHDGLxJ6YUKrAN2vk1fP2MMOxVw4Oko16FMlRGVBGqLKg==}
+    dev: false
+
   /brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
     dependencies:
@@ -3299,17 +3303,10 @@ packages:
       es-errors: 1.3.0
       gopd: 1.2.0
 
-  /echo-drag-handle-plugin@0.0.2(@tiptap/core@2.11.5)(@tiptap/pm@2.11.5)(y-prosemirror@1.2.17):
-    resolution: {integrity: sha512-gVBrpqAXXUU3Y/E33BjA1yxQ9n5jBS2OCoJ8QzEVArGBz4S7dqT4v3mx5w1cnKx88er3JBeb0ors8bnoLK3Bgw==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0
-      '@tiptap/pm': ^2.0.0
-      y-prosemirror: ^1.2.1
+  /easydrawer@0.0.7:
+    resolution: {integrity: sha512-YZLyMh7GPYy2yaQhrZl2lWTwPh8gWDtou1wxvq0/N1Wyz23E6EmFkZA42JT7X0H4UmnlJMeeGRz1vYfB8mPvSA==}
     dependencies:
-      '@tiptap/core': 2.11.5(@tiptap/pm@2.11.5)
-      '@tiptap/pm': 2.11.5
-      tippy.js: 6.3.7
-      y-prosemirror: 1.2.17(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-view@1.38.1)(y-protocols@1.0.6)(yjs@13.6.24)
+      bezier-js: 6.1.4
     dev: false
 
   /emoji-regex-xs@1.0.0:
@@ -3887,6 +3884,14 @@ packages:
     dependencies:
       is-callable: 1.2.7
 
+  /frimousse@0.1.0(react@19.0.0):
+    resolution: {integrity: sha512-0K6cSb8BVmzn2brlhuw5nlFZuYUO+eWwgVwfFsHaYnKffJYO/WItnfFWfFQ6Zo1NKLq/9EdSVna+eZ07OVffLg==}
+    peerDependencies:
+      react: ^18 || ^19
+    dependencies:
+      react: 19.0.0
+    dev: false
+
   /fs-extra@7.0.1:
     resolution: {integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==}
     engines: {node: '>=6 <7 || >=8'}
@@ -4351,10 +4356,6 @@ packages:
   /isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  /isomorphic.js@0.2.5:
-    resolution: {integrity: sha512-PIeMbHqMt4DnUP3MA/Flc0HElYjMXArsw1qwJZcm9sqR8mq3l8NYizFMty0pWwE/tzIGH3EKK5+jes5mAr85yw==}
-    dev: false
-
   /iterator.prototype@1.1.5:
     resolution: {integrity: sha512-H0dkQoCa3b2VEeKQBOxFph+JAbcrQdE7KC0UkqwpLmv2EC4P41QXP+rqo9wYodACiG5/WM5s9oDApTU8utwj9g==}
     engines: {node: '>= 0.4'}
@@ -4487,14 +4488,6 @@ packages:
       prelude-ls: 1.2.1
       type-check: 0.4.0
     dev: true
-
-  /lib0@0.2.99:
-    resolution: {integrity: sha512-vwztYuUf1uf/1zQxfzRfO5yzfNKhTtgOByCruuiQQxWQXnPb8Itaube5ylofcV0oM0aKal9Mv+S1s1Ky0UYP1w==}
-    engines: {node: '>=16'}
-    hasBin: true
-    dependencies:
-      isomorphic.js: 0.2.5
-    dev: false
 
   /lie@3.3.0:
     resolution: {integrity: sha512-UaiMJzeWRlEujzAuw5LokY1L5ecNQYZKfmyZ9L7wDHb/p5etKaxXhohBcrw0EYby+G/NA52vRSN4N39dxHAIwQ==}
@@ -5343,8 +5336,8 @@ packages:
       react: 19.0.0
     dev: false
 
-  /reactjs-tiptap-editor@0.2.5(@types/react-dom@19.0.4)(@types/react@19.0.10)(alien-signals@1.0.4)(react-dom@19.0.0)(react@19.0.0)(y-prosemirror@1.2.17):
-    resolution: {integrity: sha512-14cXVg45OZJBlke+vLAbDNNP5xunT+Vre2DbDUteP5YLkYdoAC9dASKqM9tshC9T8SMm44kYziR7YSGKlxhgKg==}
+  /reactjs-tiptap-editor@0.2.6(@types/react-dom@19.0.4)(@types/react@19.0.10)(alien-signals@1.0.4)(react-dom@19.0.0)(react@19.0.0):
+    resolution: {integrity: sha512-bjEE+Fw+XNqcTPNRCqeirjux3fOYk0dSxh/oNAp8Z/HS687cxdRbSQ5XvV90Xa9vJCTrxbLw8Z/gGbX8WFDi0A==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: '>=17.0.2'
@@ -5412,7 +5405,8 @@ packages:
       clsx: 2.1.1
       deep-equal: 2.2.3
       docx: 8.6.0
-      echo-drag-handle-plugin: 0.0.2(@tiptap/core@2.11.5)(@tiptap/pm@2.11.5)(y-prosemirror@1.2.17)
+      easydrawer: 0.0.7
+      frimousse: 0.1.0(react@19.0.0)
       katex: 0.16.21
       lodash-es: 4.17.21
       lucide-react: 0.427.0(react@19.0.0)
@@ -5435,7 +5429,6 @@ packages:
       - '@types/react-dom'
       - alien-signals
       - supports-color
-      - y-prosemirror
     dev: false
 
   /read-yaml-file@1.1.0:
@@ -6312,41 +6305,6 @@ packages:
 
   /xml@1.0.1:
     resolution: {integrity: sha512-huCv9IH9Tcf95zuYCsQraZtWnJvBtLVE0QHMOs8bWyZAFZNDcYjsPq1nEx8jKA9y+Beo9v+7OBPRisQTjinQMw==}
-    dev: false
-
-  /y-prosemirror@1.2.17(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-view@1.38.1)(y-protocols@1.0.6)(yjs@13.6.24):
-    resolution: {integrity: sha512-9bmO5Vl6E3AH5JRQhJPWOmX4x0dwDZvfM86qd+w38G0j23VSV+ZvrKYBbKc1l44Tnyd7j7TWEuqBpzfOfbc4fw==}
-    engines: {node: '>=16.0.0', npm: '>=8.0.0'}
-    peerDependencies:
-      prosemirror-model: ^1.7.1
-      prosemirror-state: ^1.2.3
-      prosemirror-view: ^1.9.10
-      y-protocols: ^1.0.1
-      yjs: ^13.5.38
-    dependencies:
-      lib0: 0.2.99
-      prosemirror-model: 1.24.1
-      prosemirror-state: 1.4.3
-      prosemirror-view: 1.38.1
-      y-protocols: 1.0.6(yjs@13.6.24)
-      yjs: 13.6.24
-    dev: false
-
-  /y-protocols@1.0.6(yjs@13.6.24):
-    resolution: {integrity: sha512-vHRF2L6iT3rwj1jub/K5tYcTT/mEYDUppgNPXwp8fmLpui9f7Yeq3OEtTLVF012j39QnV+KEQpNqoN7CWU7Y9Q==}
-    engines: {node: '>=16.0.0', npm: '>=8.0.0'}
-    peerDependencies:
-      yjs: ^13.0.0
-    dependencies:
-      lib0: 0.2.99
-      yjs: 13.6.24
-    dev: false
-
-  /yjs@13.6.24:
-    resolution: {integrity: sha512-xn/pYLTZa3uD1uDG8lpxfLRo5SR/rp0frdASOl2a71aYNvUXdWcLtVL91s2y7j+Q8ppmjZ9H3jsGVgoFMbT2VA==}
-    engines: {node: '>=16.0.0', npm: '>=8.0.0'}
-    dependencies:
-      lib0: 0.2.99
     dev: false
 
   /yocto-queue@0.1.0:
