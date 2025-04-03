@@ -61,6 +61,7 @@ import 'katex/dist/katex.min.css';
 import 'easydrawer/styles.css';
 
 import 'reactjs-tiptap-editor/style.css';
+import 'react-image-crop/dist/ReactCrop.css';
 
 
 function convertBase64ToBlob(base64: string) {
