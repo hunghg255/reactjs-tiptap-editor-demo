@@ -15,8 +15,8 @@ dependencies:
     specifier: ^19.0.0
     version: 19.1.0(react@19.1.0)
   reactjs-tiptap-editor:
-    specifier: ^0.2.24
-    version: 0.2.24(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@1.0.13)(react-dom@19.1.0)(react@19.1.0)
+    specifier: ^0.2.25
+    version: 0.2.25(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@1.0.13)(react-dom@19.1.0)(react@19.1.0)
 
 devDependencies:
   '@types/node':
@@ -4890,8 +4890,8 @@ packages:
       react: 19.1.0
     dev: false
 
-  /reactjs-tiptap-editor@0.2.24(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@1.0.13)(react-dom@19.1.0)(react@19.1.0):
-    resolution: {integrity: sha512-y2UHisYUTXBsru7ikS/Gcub7dBU0Kwk1DXHiYCCf4aFJWHTc12hneeaMCA4g5dTeC5OTyW08tH5Iv6a++Tk7Ew==}
+  /reactjs-tiptap-editor@0.2.25(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@1.0.13)(react-dom@19.1.0)(react@19.1.0):
+    resolution: {integrity: sha512-7aRwTJVBJpebjuHAf8HOaNhwB+kxjWAXQk+RRsyK73e8kOibCKB5pKZMQb/yHOeq96OxH7KAzb4yecD8GrCFwg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: '>=17.0.2'

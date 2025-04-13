@@ -12,7 +12,7 @@
     "next": "15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "reactjs-tiptap-editor": "^0.2.24"
+    "reactjs-tiptap-editor": "^0.2.25"
   },
   "devDependencies": {
     "@types/node": "^20",
