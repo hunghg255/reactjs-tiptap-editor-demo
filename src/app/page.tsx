@@ -1,13 +1,10 @@
-import dynamic from "next/dynamic";
+import EditorClient from "@/components/Editor/EditorClient";
 
-const Editor = dynamic(() => import('@/components/Editor/Editor'), {
-  ssr: false,
-});
 
 export default function Home() {
   return (
     <>
-    <Editor />
+    <EditorClient />
     </>
   );
 }
