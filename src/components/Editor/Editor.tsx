@@ -63,6 +63,9 @@ import 'easydrawer/styles.css';
 import 'reactjs-tiptap-editor/style.css';
 import 'react-image-crop/dist/ReactCrop.css';
 
+import 'prism-code-editor-lightweight/layout.css';
+import "prism-code-editor-lightweight/themes/github-dark.css"
+
 
 function convertBase64ToBlob(base64: string) {
   const arr = base64.split(',')
