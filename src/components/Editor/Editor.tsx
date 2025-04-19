@@ -234,78 +234,103 @@ function Editor() {
   )
 
   return (
-    <div
-      className="p-[24px] flex flex-col w-full max-w-screen-lg gap-[24px] mx-[auto] my-0"
+    <main
       style={{
-        maxWidth: 1024,
-        margin: '40px auto',
+        padding: '0 20px',
       }}
     >
       <div
         style={{
-          display: 'flex',
-          gap: '12px',
-          marginTop: '100px',
-          marginBottom: 10,
+          maxWidth: 1024,
+          margin: '88px auto 120px',
         }}
       >
-        <button type="button" onClick={() => locale.setLang('vi')}>Vietnamese</button>
-        <button type="button" onClick={() => locale.setLang('en')}>English</button>
-        <button type="button" onClick={() => locale.setLang('zh_CN')}>Chinese</button>
-        <button type="button" onClick={() => locale.setLang('pt_BR')}>Português</button>
-        <button type="button" onClick={() => locale.setLang('hu_HU')}>Hungarian</button>
-        <button type="button" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-          {theme === 'dark' ? 'Light' : 'Dark'}
-        </button>
-        <button type="button" onClick={() => setDisable(!disable)}>{disable ? 'Editable' : 'Readonly'}</button>
-      </div>
-
-      <RichTextEditor
-        output="html"
-        content={content as any}
-        onChangeContent={onValueChange}
-        extensions={extensions}
-        dark={theme === 'dark'}
-        disabled={disable}
-        bubbleMenu={{
-          render({ extensionsNames, editor, disabled }) {
-            return <>
-              {extensionsNames.includes('twitter') ? <BubbleMenuTwitter disabled={disabled}
-                editor={editor}
-                key="twitter"
-              /> : null}
-              {extensionsNames.includes('katex')  ? <BubbleMenuKatex disabled={disabled}
-                editor={editor}
-                key="katex"
-              /> : null}
-              {extensionsNames.includes('excalidraw')  ? <BubbleMenuExcalidraw disabled={disabled}
-                editor={editor}
-                key="excalidraw"
-              /> : null}
-              {extensionsNames.includes('mermaid')  ? <BubbleMenuMermaid disabled={disabled}
-                editor={editor}
-                key="mermaid"
-              /> : null}
-              {extensionsNames.includes('drawer')  ? <BubbleMenuDrawer disabled={disabled}
-                editor={editor}
-                key="drawer"
-              /> : null}
-            </>
-          },
-        }}
-      />
-
-      {typeof content === 'string' && (
-        <textarea
+        <div
           style={{
-            marginTop: 20,
-            height: 500,
+            display: 'flex',
+            gap: '12px',
+            marginBottom: 10,
           }}
-          readOnly
-          value={content}
+          className="buttonWrap"
+        >
+          <button onClick={() => locale.setLang('vi')}>Vietnamese</button>
+          <button onClick={() => locale.setLang('en')}>English</button>
+          <button onClick={() => locale.setLang('zh_CN')}>Chinese</button>
+          <button type="button" onClick={() => locale.setLang('pt_BR')}>Português</button>
+          <button type="button" onClick={() => locale.setLang('hu_HU')}>Hungarian</button>
+          <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+            {theme === 'dark' ? 'Light' : 'Dark'}
+          </button>
+          <button onClick={() => setDisable(!disable)}>{disable ? 'Editable' : 'Readonly'}</button>
+          <button
+            onClick={() => {
+              window.open('https://github.com/hunghg255/reactjs-tiptap-editor-demo', '_blank');
+            }}
+          >
+            Source Demo
+          </button>
+          <button
+            onClick={() => {
+              window.open('https://reactjs-tiptap-editor.vercel.app/', '_blank');
+            }}
+          >
+            Documentation
+          </button>
+        </div>
+
+        <RichTextEditor
+          output="html"
+          content={content as any}
+          onChangeContent={onValueChange}
+          extensions={extensions}
+          dark={theme === 'dark'}
+          disabled={disable}
+          bubbleMenu={{
+            render({ extensionsNames, editor, disabled }, bubbleDefaultDom) {
+              return <>
+                {bubbleDefaultDom}
+
+                {extensionsNames.includes('twitter') ? <BubbleMenuTwitter disabled={disabled}
+                  editor={editor}
+                  key="twitter"
+                /> : null}
+                {extensionsNames.includes('katex') ? <BubbleMenuKatex disabled={disabled}
+                  editor={editor}
+                  key="katex"
+                /> : null}
+                {extensionsNames.includes('excalidraw') ? <BubbleMenuExcalidraw disabled={disabled}
+                  editor={editor}
+                  key="excalidraw"
+                /> : null}
+                {extensionsNames.includes('mermaid') ? <BubbleMenuMermaid disabled={disabled}
+                  editor={editor}
+                  key="mermaid"
+                /> : null}
+                {extensionsNames.includes('drawer') ? <BubbleMenuDrawer disabled={disabled}
+                  editor={editor}
+                  key="drawer"
+                /> : null}
+              </>
+            },
+          }}
         />
-      )}
-    </div>
+
+        {typeof content === 'string' && (
+          <textarea
+            className="textarea"
+            readOnly
+            style={{
+              marginTop: 20,
+              height: 500,
+              width: '100%',
+              borderRadius: 4,
+              padding: 10,
+            }}
+            value={content}
+          />
+        )}
+      </div>
+    </main>
   )
 }
 
