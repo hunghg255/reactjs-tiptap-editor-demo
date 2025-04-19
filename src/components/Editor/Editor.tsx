@@ -67,7 +67,7 @@ import "prism-code-editor-lightweight/themes/github-dark.css"
 
 import 'katex/dist/katex.min.css'
 import 'easydrawer/styles.css'
-
+import 'react-image-crop/dist/ReactCrop.css';
 
 function convertBase64ToBlob(base64: string) {
   const arr = base64.split(',')
