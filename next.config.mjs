@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['shiki'],
-
   eslint: {
     ignoreDuringBuilds: true,
   },
