@@ -15,8 +15,8 @@ dependencies:
     specifier: ^19.1.0
     version: 19.1.0(react@19.1.0)
   reactjs-tiptap-editor:
-    specifier: ^0.3.14
-    version: 0.3.14(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@1.0.13)(react-dom@19.1.0)(react@19.1.0)
+    specifier: ^0.3.16
+    version: 0.3.16(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@1.0.13)(react-dom@19.1.0)(react@19.1.0)
 
 devDependencies:
   '@types/node':
@@ -803,7 +803,7 @@ packages:
   /@radix-ui/react-compose-refs@1.1.2(@types/react@19.1.0)(react@19.1.0):
     resolution: {integrity: sha512-z4eqJvfiNnFMHIIvXP3CY57y2WJs5g2v3X0zm9mEJkrkNv4rDxu+sg9Jh8EkXyeqBkB7SOcboo9dMVqhyrACIg==}
     peerDependencies:
-      '@types/react': '*'
+      '@types/react': 19.1.8
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
     peerDependenciesMeta:
       '@types/react':
@@ -1082,7 +1082,7 @@ packages:
   /@radix-ui/react-id@1.1.1(@types/react@19.1.0)(react@19.1.0):
     resolution: {integrity: sha512-kGkGegYIdQsOb4XjsfM97rXsiHaBwco+hFI66oO4s9LU+PLAC5oJ7khdOVFxkhsmlbpUqDAvXw11CluXP+jkHg==}
     peerDependencies:
-      '@types/react': '*'
+      '@types/react': 19.1.8
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
     peerDependenciesMeta:
       '@types/react':
@@ -5966,8 +5966,8 @@ packages:
       react: 19.1.0
     dev: false
 
-  /reactjs-tiptap-editor@0.3.14(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@1.0.13)(react-dom@19.1.0)(react@19.1.0):
-    resolution: {integrity: sha512-7hbYWV7bVAfal3L20QhnJhsqIERACPNI85CtMCGjHcAb93rr3Ew1C2IujXcD479/EKSpa3IX7xldsjLvBuc8NA==}
+  /reactjs-tiptap-editor@0.3.16(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@1.0.13)(react-dom@19.1.0)(react@19.1.0):
+    resolution: {integrity: sha512-nYXOw3FtOJjCGflntd/bE4yjUrFcisKZ2ACpCqfn8HSrBeo/O9bB5Z4c8cyzIJ6awvoWqDcfzd03zauw74gEqw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: '>=17.0.2'
