@@ -15,8 +15,8 @@ dependencies:
     specifier: ^19.1.0
     version: 19.1.0(react@19.1.0)
   reactjs-tiptap-editor:
-    specifier: ^0.3.21
-    version: 0.3.21(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@1.0.13)(react-dom@19.1.0)(react@19.1.0)
+    specifier: ^0.3.22
+    version: 0.3.22(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@1.0.13)(react-dom@19.1.0)(react@19.1.0)(typescript@5.8.2)
 
 devDependencies:
   '@types/node':
@@ -3691,6 +3691,7 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.3
+    dev: true
 
   /debug@4.4.1:
     resolution: {integrity: sha512-KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==}
@@ -4367,12 +4368,17 @@ packages:
     engines: {node: ^14.13.1 || >=16.0.0}
     dev: false
 
-  /frimousse@0.1.1(react@19.1.0):
-    resolution: {integrity: sha512-BVkxB8QxLL7HRGzPnB7FwCb4PgmS3ZN9cXKl5YOxvWgu8g9VQmyF1T3GQVlb88+cophlx31kRSqpSQQ4ORLUDA==}
+  /frimousse@0.3.0(react@19.1.0)(typescript@5.8.2):
+    resolution: {integrity: sha512-kO6LMoKY/cLAYEhXXtqLRaLIE6L/DagpFPrUZaLv3LsUa1/8Iza3HhwZcgN8eZ+weXnhv69eoclNUPohcCa/IQ==}
     peerDependencies:
       react: ^18 || ^19
+      typescript: '>=5.1.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
     dependencies:
       react: 19.1.0
+      typescript: 5.8.2
     dev: false
 
   /fsevents@2.3.3:
@@ -5268,7 +5274,7 @@ packages:
     resolution: {integrity: sha512-uD66tJj54JLYq0De10AhWycZWGQNUvDI55xPgk2sQM5kn1JYlhbCMTtEeT27+vAhW2FBQxLlOmS3pmA7/2z4aA==}
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.4.0
+      debug: 4.4.1
       decode-named-character-reference: 1.2.0
       micromark-core-commonmark: 1.1.0
       micromark-factory-space: 1.1.0
@@ -5976,8 +5982,8 @@ packages:
       react: 19.1.0
     dev: false
 
-  /reactjs-tiptap-editor@0.3.21(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@1.0.13)(react-dom@19.1.0)(react@19.1.0):
-    resolution: {integrity: sha512-iUjKx+tcFjao/nfkm55346lBW5R0e0mMlm+IT/WIEHKH5iX0rCnnHxwEEPDF+OX3HZYeZcO6YxMnMh11izTkCw==}
+  /reactjs-tiptap-editor@0.3.22(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@1.0.13)(react-dom@19.1.0)(react@19.1.0)(typescript@5.8.2):
+    resolution: {integrity: sha512-T+TG8c49tOiDiROefZ8pnuJn5Y2yuBkUturRJxn/PWLNUrD7kWZORuoBU1Pjp6T0JkzKrCBPCU5zYC2DPbh/ew==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: '>=17.0.2'
@@ -6045,7 +6051,7 @@ packages:
       deep-equal: 2.2.3
       docx: 8.6.0
       easydrawer: 0.0.15
-      frimousse: 0.1.1(react@19.1.0)
+      frimousse: 0.3.0(react@19.1.0)(typescript@5.8.2)
       katex: 0.16.22
       lodash-es: 4.17.21
       lucide-react: 0.427.0(react@19.1.0)
@@ -6068,6 +6074,7 @@ packages:
       - alien-signals
       - immer
       - supports-color
+      - typescript
     dev: false
 
   /readable-stream@2.3.8:
@@ -6650,7 +6657,6 @@ packages:
     resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
