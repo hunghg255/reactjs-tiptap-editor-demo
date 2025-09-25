@@ -226,6 +226,7 @@ function Editor() {
   const [content, setContent] = useState(DEFAULT)
   const [theme, setTheme] = useState('light')
   const [disable, setDisable] = useState(false)
+  const [lang, setlang] = useState('vi');
 
   const onValueChange = useCallback(
     debounce((value: any) => {
@@ -233,6 +234,7 @@ function Editor() {
     }, 300),
     [],
   )
+
 
   return (
     <main
@@ -254,11 +256,18 @@ function Editor() {
           }}
           className="buttonWrap"
         >
-          <button onClick={() => locale.setLang('vi')}>Vietnamese</button>
-          <button onClick={() => locale.setLang('en')}>English</button>
-          <button onClick={() => locale.setLang('zh_CN')}>Chinese</button>
-          <button type="button" onClick={() => locale.setLang('pt_BR')}>Português</button>
-          <button type="button" onClick={() => locale.setLang('hu_HU')}>Hungarian</button>
+
+          <select value={lang} onChange={(e) => {
+            setlang(e.target.value);
+            locale.setLang(e.target.value)
+          }}>
+            <option value="vi">Vietnamese</option>
+            <option value="en">English</option>
+            <option value="zh_CN">Chinese</option>
+            <option value="pt_BR">Português</option>
+            <option value="hu_HU">Hungarian</option>
+            <option value="fi">Finnish</option>
+          </select>
           <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
             {theme === 'dark' ? 'Light' : 'Dark'}
           </button>

@@ -102,6 +102,15 @@ body {
   cursor: pointer;
 }
 
+select {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d1d2d2;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
 .dark body {
   background-color: #0a0b0b;
 }
