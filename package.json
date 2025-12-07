@@ -9,10 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tiptap/extension-document": "^3.13.0",
+    "@tiptap/extension-hard-break": "^3.13.0",
+    "@tiptap/extension-list": "^3.13.0",
+    "@tiptap/extension-paragraph": "^3.13.0",
+    "@tiptap/extension-text": "^3.13.0",
+    "@tiptap/extension-text-style": "^3.13.0",
+    "@tiptap/extensions": "^3.13.0",
+    "@tiptap/react": "^3.13.0",
     "next": "15.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "reactjs-tiptap-editor": "^0.4.2"
+    "reactjs-tiptap-editor": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -20,7 +28,10 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
-    "typescript": "^5"
+    "typescript": "^5",
+        "autoprefixer": "10.4.20",
+    "postcss": "8.4.47",
+    "tailwindcss": "3.4.13"
   },
   "packageManager": "pnpm@8.15.9"
 }
