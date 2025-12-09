@@ -1,65 +1,67 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 import { RichTextProvider } from 'reactjs-tiptap-editor'
 
 import { localeActions } from 'reactjs-tiptap-editor/locale-bundle'
 
+import { themeActions } from 'reactjs-tiptap-editor/theme'
+
 // Base Kit
 import { Document } from '@tiptap/extension-document'
-import { Text } from '@tiptap/extension-text'
-import { Paragraph } from '@tiptap/extension-paragraph'
-import { Dropcursor, Gapcursor, Placeholder, TrailingNode } from '@tiptap/extensions'
 import { HardBreak } from '@tiptap/extension-hard-break'
-import { TextStyle } from '@tiptap/extension-text-style';
-import { ListItem } from '@tiptap/extension-list';
+import { ListItem } from '@tiptap/extension-list'
+import { Paragraph } from '@tiptap/extension-paragraph'
+import { Text } from '@tiptap/extension-text'
+import { TextStyle } from '@tiptap/extension-text-style'
+import { Dropcursor, Gapcursor, Placeholder, TrailingNode } from '@tiptap/extensions'
 
 // build extensions
-import { History, RichTextUndo, RichTextRedo } from 'reactjs-tiptap-editor/history';
-import { SearchAndReplace, RichTextSearchAndReplace } from 'reactjs-tiptap-editor/searchandreplace';
-import { Clear, RichTextClear } from 'reactjs-tiptap-editor/clear';
-import { FontFamily, RichTextFontFamily } from 'reactjs-tiptap-editor/fontfamily';
-import { Heading, RichTextHeading } from 'reactjs-tiptap-editor/heading';
-import { FontSize, RichTextFontSize } from 'reactjs-tiptap-editor/fontsize';
-import { Bold, RichTextBold } from 'reactjs-tiptap-editor/bold';
-import { Italic, RichTextItalic } from 'reactjs-tiptap-editor/italic';
-import { TextUnderline, RichTextUnderline } from 'reactjs-tiptap-editor/textunderline';
-import { Strike, RichTextStrike } from 'reactjs-tiptap-editor/strike';
-import { MoreMark, RichTextMoreMark } from 'reactjs-tiptap-editor/moremark';
-import { Emoji, RichTextEmoji } from 'reactjs-tiptap-editor/emoji';
-import { Color, RichTextColor } from 'reactjs-tiptap-editor/color';
-import { Highlight, RichTextHighlight } from 'reactjs-tiptap-editor/highlight';
-import { BulletList, RichTextBulletList } from 'reactjs-tiptap-editor/bulletlist';
-import { OrderedList, RichTextOrderedList } from 'reactjs-tiptap-editor/orderedlist';
-import { TextAlign, RichTextAlign } from 'reactjs-tiptap-editor/textalign';
-import { Indent, RichTextIndent } from 'reactjs-tiptap-editor/indent';
-import { LineHeight, RichTextLineHeight } from 'reactjs-tiptap-editor/lineheight';
-import { TaskList, RichTextTaskList } from 'reactjs-tiptap-editor/tasklist';
-import { Link, RichTextLink } from 'reactjs-tiptap-editor/link';
-import { Image, RichTextImage } from 'reactjs-tiptap-editor/image';
-import { Video, RichTextVideo } from 'reactjs-tiptap-editor/video';
-import { ImageGif, RichTextImageGif } from 'reactjs-tiptap-editor/imagegif';
-import { Blockquote, RichTextBlockquote } from 'reactjs-tiptap-editor/blockquote';
-import { HorizontalRule, RichTextHorizontalRule } from 'reactjs-tiptap-editor/horizontalrule';
-import { Code, RichTextCode } from 'reactjs-tiptap-editor/code';
-import { CodeBlock, RichTextCodeBlock } from 'reactjs-tiptap-editor/codeblock';
-import { Column, ColumnNode, MultipleColumnNode, RichTextColumn } from 'reactjs-tiptap-editor/column';
-import { Table, RichTextTable } from 'reactjs-tiptap-editor/table';
-import { Iframe, RichTextIframe } from 'reactjs-tiptap-editor/iframe';
-import { ExportPdf, RichTextExportPdf } from 'reactjs-tiptap-editor/exportpdf';
-import { ImportWord, RichTextImportWord } from 'reactjs-tiptap-editor/importword';
-import { ExportWord, RichTextExportWord } from 'reactjs-tiptap-editor/exportword';
-import { TextDirection, RichTextTextDirection } from 'reactjs-tiptap-editor/textdirection';
-import { Attachment, RichTextAttachment } from 'reactjs-tiptap-editor/attachment';
-import { Katex, RichTextKatex } from 'reactjs-tiptap-editor/katex';
-import { Excalidraw, RichTextExcalidraw } from 'reactjs-tiptap-editor/excalidraw';
-import { Mermaid, RichTextMermaid } from 'reactjs-tiptap-editor/mermaid';
-import { Drawer, RichTextDrawer } from 'reactjs-tiptap-editor/drawer';
-import { Twitter, RichTextTwitter } from 'reactjs-tiptap-editor/twitter';
-import { Mention } from 'reactjs-tiptap-editor/mention';
-import { CodeView, RichTextCodeView } from 'reactjs-tiptap-editor/codeview';
+import { Attachment, RichTextAttachment } from 'reactjs-tiptap-editor/attachment'
+import { Blockquote, RichTextBlockquote } from 'reactjs-tiptap-editor/blockquote'
+import { Bold, RichTextBold } from 'reactjs-tiptap-editor/bold'
+import { BulletList, RichTextBulletList } from 'reactjs-tiptap-editor/bulletlist'
+import { Clear, RichTextClear } from 'reactjs-tiptap-editor/clear'
+import { Code, RichTextCode } from 'reactjs-tiptap-editor/code'
+import { CodeBlock, RichTextCodeBlock } from 'reactjs-tiptap-editor/codeblock'
+import { CodeView, RichTextCodeView } from 'reactjs-tiptap-editor/codeview'
+import { Color, RichTextColor } from 'reactjs-tiptap-editor/color'
+import { Column, ColumnNode, MultipleColumnNode, RichTextColumn } from 'reactjs-tiptap-editor/column'
+import { Drawer, RichTextDrawer } from 'reactjs-tiptap-editor/drawer'
+import { Emoji, RichTextEmoji } from 'reactjs-tiptap-editor/emoji'
+import { Excalidraw, RichTextExcalidraw } from 'reactjs-tiptap-editor/excalidraw'
+import { ExportPdf, RichTextExportPdf } from 'reactjs-tiptap-editor/exportpdf'
+import { ExportWord, RichTextExportWord } from 'reactjs-tiptap-editor/exportword'
+import { FontFamily, RichTextFontFamily } from 'reactjs-tiptap-editor/fontfamily'
+import { FontSize, RichTextFontSize } from 'reactjs-tiptap-editor/fontsize'
+import { Heading, RichTextHeading } from 'reactjs-tiptap-editor/heading'
+import { Highlight, RichTextHighlight } from 'reactjs-tiptap-editor/highlight'
+import { History, RichTextRedo, RichTextUndo } from 'reactjs-tiptap-editor/history'
+import { HorizontalRule, RichTextHorizontalRule } from 'reactjs-tiptap-editor/horizontalrule'
+import { Iframe, RichTextIframe } from 'reactjs-tiptap-editor/iframe'
+import { Image, RichTextImage } from 'reactjs-tiptap-editor/image'
+import { ImageGif, RichTextImageGif } from 'reactjs-tiptap-editor/imagegif'
+import { ImportWord, RichTextImportWord } from 'reactjs-tiptap-editor/importword'
+import { Indent, RichTextIndent } from 'reactjs-tiptap-editor/indent'
+import { Italic, RichTextItalic } from 'reactjs-tiptap-editor/italic'
+import { Katex, RichTextKatex } from 'reactjs-tiptap-editor/katex'
+import { LineHeight, RichTextLineHeight } from 'reactjs-tiptap-editor/lineheight'
+import { Link, RichTextLink } from 'reactjs-tiptap-editor/link'
+import { Mention } from 'reactjs-tiptap-editor/mention'
+import { Mermaid, RichTextMermaid } from 'reactjs-tiptap-editor/mermaid'
+import { MoreMark, RichTextMoreMark } from 'reactjs-tiptap-editor/moremark'
+import { OrderedList, RichTextOrderedList } from 'reactjs-tiptap-editor/orderedlist'
+import { RichTextSearchAndReplace, SearchAndReplace } from 'reactjs-tiptap-editor/searchandreplace'
+import { RichTextStrike, Strike } from 'reactjs-tiptap-editor/strike'
+import { RichTextTable, Table } from 'reactjs-tiptap-editor/table'
+import { RichTextTaskList, TaskList } from 'reactjs-tiptap-editor/tasklist'
+import { RichTextAlign, TextAlign } from 'reactjs-tiptap-editor/textalign'
+import { RichTextTextDirection, TextDirection } from 'reactjs-tiptap-editor/textdirection'
+import { RichTextUnderline, TextUnderline } from 'reactjs-tiptap-editor/textunderline'
+import { RichTextTwitter, Twitter } from 'reactjs-tiptap-editor/twitter'
+import { RichTextVideo, Video } from 'reactjs-tiptap-editor/video'
 
 // Slash Command
-import { SlashCommand, SlashCommandList } from 'reactjs-tiptap-editor/slashcommand';
+import { SlashCommand, SlashCommandList } from 'reactjs-tiptap-editor/slashcommand'
 
 
 // Bubble
@@ -68,46 +70,25 @@ import {
   RichTextBubbleDrawer,
   RichTextBubbleExcalidraw,
   RichTextBubbleIframe,
+  RichTextBubbleImage,
+  RichTextBubbleImageGif,
   RichTextBubbleKatex,
   RichTextBubbleLink,
-  RichTextBubbleImage,
-  RichTextBubbleVideo,
-  RichTextBubbleImageGif,
   RichTextBubbleMermaid,
   RichTextBubbleTable,
   RichTextBubbleText,
-  RichTextBubbleTwitter
-} from 'reactjs-tiptap-editor/bubble';
+  RichTextBubbleTwitter,
+  RichTextBubbleVideo
+} from 'reactjs-tiptap-editor/bubble'
 
-import 'reactjs-tiptap-editor/style.css'
-import 'prism-code-editor-lightweight/layout.css';
-import "prism-code-editor-lightweight/themes/github-dark.css"
-import 'katex/dist/katex.min.css'
+import "@excalidraw/excalidraw/index.css"
 import 'easydrawer/styles.css'
-import "@excalidraw/excalidraw/index.css";
+import 'katex/dist/katex.min.css'
+import 'prism-code-editor-lightweight/layout.css'
+import "prism-code-editor-lightweight/themes/github-dark.css"
+import 'reactjs-tiptap-editor/style.css'
 
-// import Collaboration from '@tiptap/extension-collaboration'
-// import CollaborationCaret from '@tiptap/extension-collaboration-caret'
-// import { HocuspocusProvider } from '@hocuspocus/provider'
-// import * as Y from 'yjs'
-import { EditorContent, useEditor } from '@tiptap/react';
-
-// const ydoc = new Y.Doc()
-
-// const hocuspocusProvider = new HocuspocusProvider({
-//   url: 'ws://0.0.0.0:8080',
-//   name: 'github.com/hunghg255',
-//   document: ydoc,
-// })
-
-function getRandomColor() {
-  const letters = '0123456789ABCDEF'
-  let color = '#'
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)]
-  }
-  return color
-}
+import { EditorContent, useEditor } from '@tiptap/react'
 
 function convertBase64ToBlob(base64: string) {
   const arr = base64.split(',')
@@ -251,16 +232,6 @@ const extensions = [
   Mention,
   SlashCommand,
   CodeView,
-
-  //  Collaboration.configure({
-  //   document: hocuspocusProvider.document,
-  // }),
-  // CollaborationCaret.configure({
-  //   provider: hocuspocusProvider,
-  //   user: {
-  //     color: getRandomColor(),
-  //   },
-  // }),
 ]
 
 const DEFAULT = `<h1 dir="auto" style="text-align: center;">Rich Text Editor</h1><p dir="auto">A modern WYSIWYG rich text editor based on <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://github.com/scrumpy/tiptap">tiptap</a> and <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn ui</a> for Reactjs</p><p dir="auto"><div class="image" style="text-align: center;"><img src="https://picsum.photos/1920/1080.webp?t=1" width="500" flipx="false" flipy="false" align="center" inline="false" style=""></div></p><p dir="auto"></p><div data-type="horizontalRule"><hr></div><h2 dir="auto">Demo</h2><p dir="auto">👉<a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://reactjs-tiptap-editor.vercel.app/">Demo</a></p><h2 dir="auto">Features</h2><ul><li><p dir="auto">Use <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn ui</a> components</p></li><li><p dir="auto">Markdown support</p></li><li><p dir="auto">TypeScript support</p></li><li><p dir="auto">I18n support (vi, en, zh, pt)</p></li><li><p dir="auto">React support</p></li><li><p dir="auto">Slash Commands</p></li><li><p dir="auto">Multi Column</p></li><li><p dir="auto">TailwindCss</p></li><li><p dir="auto">Support emoji</p></li><li><p dir="auto">Support iframe</p></li><li><p dir="auto">Support mermaid</p></li></ul><h2 dir="auto">Installation</h2><pre code="pnpm install reactjs-tiptap-editor" language="bash" linenumbers="true" wordwrap="false" tabsize="2" shouldfocus="false"><code>pnpm install reactjs-tiptap-editor</code></pre><p dir="auto"></p>`
@@ -275,16 +246,11 @@ function debounce(func: any, wait: number) {
 }
 
 
-const Header = ({ editor, theme, setTheme }) => {
-  const [editorEditable, setEditorEditable] = useState(false);
-  const [lang, setlang] = useState('vi');
-  const [disable, setDisable] = useState(false)
-
-
-
-  useEffect(() => {
-    setEditorEditable(editor?.isEditable ?? true);
-  }, []);
+const Header = ({ editor }) => {
+  const [theme, setTheme] = useState('light')
+  const [editorEditable, setEditorEditable] = useState(true);
+  const [color, setColor] = useState('default');
+  const [lang, setlang] = useState('en');
 
   useEffect(() => {
     if (editor) {
@@ -303,52 +269,68 @@ const Header = ({ editor, theme, setTheme }) => {
   }, [editor]);
 
   return <>
-    <div
-      style={{
-        display: 'flex',
-        gap: '12px',
-        marginBottom: 10,
-      }}
-      className="buttonWrap"
-    >
-      <select value={lang} onChange={(e) => {
-        setlang(e.target.value);
-        localeActions.setLang(e.target.value)
-      }}>
-        <option value="vi">Vietnamese</option>
-        <option value="en">English</option>
-        <option value="zh_CN">Chinese</option>
-        <option value="pt_BR">Português</option>
-        <option value="hu_HU">Hungarian</option>
-        <option value="fi">Finnish</option>
-      </select>
-      <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-        {theme === 'dark' ? 'Light' : 'Dark'}
-      </button>
-       <button type="button" onClick={() => {
-        editor?.setEditable(!editorEditable);
-      }}>{editorEditable ? 'Editable' : 'Disabled'}</button>
+    <div className='flex items-center justify-between gap-[12px] header'>
+      <div className='flex items-center gap-2'>
+        <select value={lang} onChange={(e) => {
+          setlang(e.target.value);
+          localeActions.setLang(e.target.value)
+        }}>
+          <option value="vi">Vietnamese</option>
+          <option value="en">English</option>
+          <option value="zh_CN">Chinese</option>
+          <option value="pt_BR">Português</option>
+          <option value="hu_HU">Hungarian</option>
+          <option value="fi">Finnish</option>
+        </select>
 
-      <button
-        onClick={() => {
-          window.open('https://github.com/hunghg255/reactjs-tiptap-editor-demo', '_blank');
-        }}
-      >
-        Source Demo
-      </button>
-      <button
-        onClick={() => {
-          window.open('https://reactjs-tiptap-editor.vercel.app/', '_blank');
-        }}
-      >
-        Documentation
-      </button>
+        <button type="button" onClick={() => {
+          editor?.setEditable(!editorEditable);
+        }}>{editorEditable ? 'Readonly' : 'Editable'}</button>
+
+        <button
+          onClick={() => {
+            window.open('https://github.com/hunghg255/reactjs-tiptap-editor-demo', '_blank');
+          }}
+        >
+          Source Demo
+        </button>
+
+        <button
+          onClick={() => {
+            window.open('https://reactjs-tiptap-editor.vercel.app/', '_blank');
+          }}
+        >
+          Documentation
+        </button>
+      </div>
+
+      <div className='flex items-center gap-2'>
+        <button onClick={() => {
+          setTheme(theme === 'dark' ? 'light' : 'dark');
+          themeActions.setTheme(theme === 'dark' ? 'light' : 'dark');
+        }}>
+          {theme === 'dark' ? 'Light' : 'Dark'}
+        </button>
+
+        <select value={color} onChange={(e) => {
+          setColor(e.target.value);
+          themeActions.setColor(e.target.value)
+        }}>
+          <option value="default">Default</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="orange">Orange</option>
+          <option value="rose">Rose</option>
+          <option value="violet">Violet</option>
+          <option value="yellow">Yellow</option>
+        </select>
+      </div>
     </div>
   </>
 }
 
 const RichTextToolbar = () => {
-
   return <div className="flex items-center !p-1 gap-2 flex-wrap !border-b !border-solid !border-[#a5a4a4]">
     <RichTextUndo />
     <RichTextRedo />
@@ -398,7 +380,6 @@ const RichTextToolbar = () => {
 
 function App() {
   const [content, setContent] = useState(DEFAULT)
-  const [theme, setTheme] = useState('light')
 
   const onValueChange = useCallback(
     debounce((value: any) => {
@@ -428,15 +409,13 @@ function App() {
     <div
       className="p-[24px] flex flex-col w-full max-w-screen-lg gap-[24px] mx-[auto] my-0"
       style={{
-        maxWidth: 1024,
+        maxWidth: 1200,
         margin: '40px auto',
       }}
     >
-      <Header editor={editor} setTheme={setTheme} theme={theme} />
+      <Header editor={editor}  />
 
-      <RichTextProvider editor={editor}
-        dark={theme === 'dark'}
-      >
+      <RichTextProvider editor={editor}>
         <div className="overflow-hidden rounded-[0.5rem] bg-background shadow outline outline-1">
           <div className="flex max-h-full w-full flex-col">
             <RichTextToolbar />
@@ -464,7 +443,6 @@ function App() {
 
             {/* Command List */}
             <SlashCommandList />
-
           </div>
         </div>
       </RichTextProvider>

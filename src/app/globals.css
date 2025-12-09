@@ -16,15 +16,8 @@ body {
 }
 
 
-.buttonWrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.buttonWrap button {
-  padding: 10px 20px;
+.header button {
+  padding: 8px 16px;
   border: none;
   border-radius: 5px;
   background-color: #d1d2d2;
@@ -32,8 +25,8 @@ body {
   cursor: pointer;
 }
 
-select {
-  padding: 10px 20px;
+.header select {
+  padding: 8px 16px;
   border: none;
   border-radius: 5px;
   background-color: #d1d2d2;
