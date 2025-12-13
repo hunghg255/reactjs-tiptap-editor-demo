@@ -132,7 +132,6 @@ const extensions = [
   FontFamily,
   Heading,
   FontSize,
-  Heading,
   Bold,
   Italic,
   TextUnderline,

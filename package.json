@@ -17,10 +17,10 @@
     "@tiptap/extension-text-style": "^3.13.0",
     "@tiptap/extensions": "^3.13.0",
     "@tiptap/react": "^3.13.0",
-    "next": "15.3.6",
+    "next": "15.3.8",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "reactjs-tiptap-editor": "^1.0.5"
+    "reactjs-tiptap-editor": "^1.0.6"
   },
   "devDependencies": {
     "@types/node": "^20",
