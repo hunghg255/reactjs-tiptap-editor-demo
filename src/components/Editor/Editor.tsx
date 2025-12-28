@@ -130,6 +130,7 @@ import {
   RichTextBubbleText,
   RichTextBubbleTwitter,
   RichTextBubbleVideo,
+  RichTextBubbleMenuDragHandle,
 } from 'reactjs-tiptap-editor/bubble';
 
 import '@excalidraw/excalidraw/index.css';
@@ -160,7 +161,6 @@ function convertBase64ToBlob(base64: string) {
 // custom document to support columns
 const DocumentColumn = /* @__PURE__ */ Document.extend({
   content: '(block|columns)+',
-  // echo editor is a block editor
 });
 
 const MOCK_USERS = [
@@ -204,7 +204,11 @@ const MOCK_USERS = [
 const BaseKit = [
   DocumentColumn,
   Text,
-  Dropcursor,
+  Dropcursor.configure({
+    class: 'reactjs-tiptap-editor-theme',
+    color: 'hsl(var(--primary))',
+    width: 2,
+  }),
   Gapcursor,
   HardBreak,
   Paragraph,
@@ -481,6 +485,7 @@ function App() {
 
               {/* Command List */}
               <SlashCommandList />
+              <RichTextBubbleMenuDragHandle />
             </div>
 
             <Count editor={editor} limit={LIMIT} />
