@@ -31,7 +31,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-fast-compare": "^3.2.2",
-    "reactjs-tiptap-editor": "^1.0.11",
+    "reactjs-tiptap-editor": "^1.0.12",
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7"
   },

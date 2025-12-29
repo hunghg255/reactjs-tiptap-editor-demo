@@ -59,6 +59,12 @@ export const Header = () => {
     listenStorageChange: true,
   });
 
+  useEffect(() => {
+    themeActions.setTheme(theme || 'light');
+    themeActions.setColor(color || 'default');
+    themeActions.setBorderRadius(`${radius}rem` || '0.5rem');
+  }, []);
+
   return (
     <div className="flex items-center justify-between sticky top-0 z-10 ">
       <h1 className="text-[24px] font-bold leading-tight tracking-tighter">
@@ -322,6 +328,10 @@ export const NavBar = ({ editor }) => {
       listenStorageChange: true,
     },
   );
+
+  useEffect(() => {
+    localeActions.setLang(lang || 'en');
+  }, []);
 
   useEffect(() => {
     if (editor) {

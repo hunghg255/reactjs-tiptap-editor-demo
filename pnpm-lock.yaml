@@ -72,8 +72,8 @@ dependencies:
     specifier: ^3.2.2
     version: 3.2.2
   reactjs-tiptap-editor:
-    specifier: ^1.0.11
-    version: 1.0.11(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@3.1.1)(emojibase@17.0.0)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(react-dom@19.1.0)(react@19.1.0)(typescript@5.8.2)
+    specifier: ^1.0.12
+    version: 1.0.12(@types/react-dom@19.1.1)(@types/react@19.1.0)(emojibase@17.0.0)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(react-dom@19.1.0)(react@19.1.0)(typescript@5.8.2)
   tailwind-merge:
     specifier: ^3.4.0
     version: 3.4.0
@@ -3207,10 +3207,6 @@ packages:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
     dev: true
-
-  /alien-signals@3.1.1:
-    resolution: {integrity: sha512-ogkIWbVrLwKtHY6oOAXaYkAxP+cTH7V5FZ5+Tm4NZFd8VDZ6uNMDrfzqctTZ42eTMCSR3ne3otpcxmqSnFfPYA==}
-    dev: false
 
   /ansi-styles@4.3.0:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
@@ -6483,18 +6479,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /reactjs-signal@2.0.1(alien-signals@3.1.1)(react@19.1.0):
-    resolution: {integrity: sha512-dWmBbxwooYX960GM090NbsjndOJXiyVE0ymoAFNijUA5Tt4p1A1tnfenrVqAYCNqSrurmiKBnVP2ko8IXKkZLw==}
-    peerDependencies:
-      alien-signals: '>=2.0.1'
-      react: '>=18'
-    dependencies:
-      alien-signals: 3.1.1
-      react: 19.1.0
-    dev: false
-
-  /reactjs-tiptap-editor@1.0.11(@types/react-dom@19.1.1)(@types/react@19.1.0)(alien-signals@3.1.1)(emojibase@17.0.0)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(react-dom@19.1.0)(react@19.1.0)(typescript@5.8.2):
-    resolution: {integrity: sha512-eY0Ayj1/9jvH3lPrEK8SsynytKe9zRXXN87nYpl+jILFLEy3eWs10H3PSvXmRhZetQCybCpuiAh+x7XO8WLPOA==}
+  /reactjs-tiptap-editor@1.0.12(@types/react-dom@19.1.1)(@types/react@19.1.0)(emojibase@17.0.0)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(react-dom@19.1.0)(react@19.1.0)(typescript@5.8.2):
+    resolution: {integrity: sha512-2qc1QHx+OnJAE5jQ/Me7wmK/eELmJwOH8RSm20jHM2A/yzNrcy+4uOsWvqAdu1+S5gb4L2NUkMWFF+erS5F2MQ==}
     engines: {node: '>=18.0.0'}
     dependencies:
       '@excalidraw/excalidraw': 0.18.0(@types/react-dom@19.1.1)(@types/react@19.1.0)(react-dom@19.1.0)(react@19.1.0)
@@ -6569,15 +6555,14 @@ packages:
       react-colorful: 5.6.1(react-dom@19.1.0)(react@19.1.0)
       react-image-crop: 11.0.10(react@19.1.0)
       react-tweet: 3.3.0(react-dom@19.1.0)(react@19.1.0)
-      reactjs-signal: 2.0.1(alien-signals@3.1.1)(react@19.1.0)
       scroll-into-view-if-needed: 3.1.0
       svg64: 2.0.0
       y-protocols: 1.0.7(yjs@13.6.28)
       yjs: 13.6.28
+      zustand: 5.0.9(@types/react@19.1.0)(react@19.1.0)
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
-      - alien-signals
       - bufferutil
       - emojibase
       - immer
@@ -6588,6 +6573,7 @@ packages:
       - react-dom
       - supports-color
       - typescript
+      - use-sync-external-store
       - utf-8-validate
     dev: false
 
@@ -7538,4 +7524,26 @@ packages:
       '@types/react': 19.1.0
       react: 19.1.0
       use-sync-external-store: 1.5.0(react@19.1.0)
+    dev: false
+
+  /zustand@5.0.9(@types/react@19.1.0)(react@19.1.0):
+    resolution: {integrity: sha512-ALBtUj0AfjJt3uNRQoL1tL2tMvj6Gp/6e39dnfT6uzpelGru8v1tPOGBzayOWbPJvujM8JojDk3E1LxeFisBNg==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
+    dependencies:
+      '@types/react': 19.1.0
+      react: 19.1.0
     dev: false
