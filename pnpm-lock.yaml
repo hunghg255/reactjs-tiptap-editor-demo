@@ -72,8 +72,8 @@ dependencies:
     specifier: ^3.2.2
     version: 3.2.2
   reactjs-tiptap-editor:
-    specifier: ^1.0.12
-    version: 1.0.12(@types/react-dom@19.1.1)(@types/react@19.1.0)(emojibase@17.0.0)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(react-dom@19.1.0)(react@19.1.0)(typescript@5.8.2)
+    specifier: ^1.0.14
+    version: 1.0.14(@types/react-dom@19.1.1)(@types/react@19.1.0)(emojibase@17.0.0)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(react-dom@19.1.0)(react@19.1.0)(typescript@5.8.2)
   tailwind-merge:
     specifier: ^3.4.0
     version: 3.4.0
@@ -6479,8 +6479,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /reactjs-tiptap-editor@1.0.12(@types/react-dom@19.1.1)(@types/react@19.1.0)(emojibase@17.0.0)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(react-dom@19.1.0)(react@19.1.0)(typescript@5.8.2):
-    resolution: {integrity: sha512-2qc1QHx+OnJAE5jQ/Me7wmK/eELmJwOH8RSm20jHM2A/yzNrcy+4uOsWvqAdu1+S5gb4L2NUkMWFF+erS5F2MQ==}
+  /reactjs-tiptap-editor@1.0.14(@types/react-dom@19.1.1)(@types/react@19.1.0)(emojibase@17.0.0)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(react-dom@19.1.0)(react@19.1.0)(typescript@5.8.2):
+    resolution: {integrity: sha512-I8Tu4ottbrqOcnyX1zZz0R2yOUXGi04wecn6VBiqDO9GlyniIb/g5Du7e3kzhHTDwnuioPZRhz6xT9WdGB+WZw==}
     engines: {node: '>=18.0.0'}
     dependencies:
       '@excalidraw/excalidraw': 0.18.0(@types/react-dom@19.1.1)(@types/react@19.1.0)(react-dom@19.1.0)(react@19.1.0)

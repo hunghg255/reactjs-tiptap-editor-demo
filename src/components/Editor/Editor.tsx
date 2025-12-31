@@ -108,6 +108,7 @@ import {
 } from 'reactjs-tiptap-editor/textunderline';
 import { RichTextTwitter, Twitter } from 'reactjs-tiptap-editor/twitter';
 import { RichTextVideo, Video } from 'reactjs-tiptap-editor/video';
+import { RichTextCallout, Callout } from 'reactjs-tiptap-editor/callout';
 
 // Slash Command
 import {
@@ -131,6 +132,7 @@ import {
   RichTextBubbleTwitter,
   RichTextBubbleVideo,
   RichTextBubbleMenuDragHandle,
+  RichTextBubbleCallout
 } from 'reactjs-tiptap-editor/bubble';
 
 import '@excalidraw/excalidraw/index.css';
@@ -358,6 +360,7 @@ const extensions = [
   }),
   SlashCommand,
   CodeView,
+  Callout
 ];
 
 const DEFAULT = `<h1 dir="auto" style="text-align: center">Rich Text Editor</h1><p dir="auto" style="text-align: center">A modern WYSIWYG rich text editor based on <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://github.com/scrumpy/tiptap">tiptap</a> and <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn</a> for Reactjs</p><p dir="auto"></p><p dir="auto"><div style="text-align: center;" class="image"><img style="" dir="auto" src="https://picsum.photos/1920/1080.webp?t=1" width="303" flipx="false" flipy="false" align="center" inline="false"></div></p><p dir="auto"></p><h2 dir="auto">Features</h2><ul dir="auto"><li dir="auto"><p dir="auto">Use React, tailwindcss, <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn</a> components</p></li><li dir="auto"><p dir="auto">I18n support (vi, en, zh, pt, ...)</p></li><li dir="auto"><p dir="auto">Slash Commands (type <code>/</code> to show menu list)</p></li><li dir="auto"><p dir="auto">Multi Column</p></li><li dir="auto"><p dir="auto">Support emoji <span dir="auto" data-name="100" data-type="emoji">💯</span> (type <code>:</code> to show emoji list)</p></li><li dir="auto"><p dir="auto">Support iframe</p></li><li dir="auto"><p dir="auto">Support mermaid</p></li><li dir="auto"><p dir="auto">Support mention <span class="mention" data-type="mention" dir="auto" data-id="0" data-label="hunghg255" data-mention-suggestion-char="@">@hunghg255</span> (type <code>@</code> to show list)</p></li><li dir="auto"><p dir="auto">Suport katex math (<span class="katex" dir="auto" text="c%20%3D%20%5Cpm%5Csqrt%7Ba%5E2%20%2B%20b%5E2%7D" macros=""></span>)</p></li></ul><h2 dir="auto">Installation</h2><pre dir="auto" code="pnpm install reactjs-tiptap-editor@latest" language="bash" linenumbers="true" wordwrap="false" tabsize="2" shouldfocus="false"><code>pnpm install reactjs-tiptap-editor@latest</code></pre><p dir="auto"></p>`;
@@ -417,6 +420,7 @@ const RichTextToolbar = () => {
       <RichTextDrawer />
       <RichTextTwitter />
       <RichTextCodeView />
+      <RichTextCallout />
     </div>
   );
 };
@@ -482,6 +486,7 @@ function App() {
               <RichTextBubbleTable />
               <RichTextBubbleText />
               <RichTextBubbleTwitter />
+              <RichTextBubbleCallout />
 
               {/* Command List */}
               <SlashCommandList />
