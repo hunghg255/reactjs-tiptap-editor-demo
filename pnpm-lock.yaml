@@ -78,8 +78,8 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2
       reactjs-tiptap-editor:
-        specifier: ^1.0.16
-        version: 1.0.16(@types/react-dom@19.1.1(@types/react@19.1.0))(@types/react@19.1.0)(alien-signals@3.1.2)(emojibase@17.0.0)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.2)
+        specifier: ^1.0.17
+        version: 1.0.17(@types/react-dom@19.1.1(@types/react@19.1.0))(@types/react@19.1.0)(alien-signals@3.1.2)(emojibase@17.0.0)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.2)
       tailwind-merge:
         specifier: ^3.4.0
         version: 3.4.0
@@ -3593,8 +3593,8 @@ packages:
       alien-signals: '>=3.1.2'
       react: '>=18'
 
-  reactjs-tiptap-editor@1.0.16:
-    resolution: {integrity: sha512-Am5uHXFV8GVmSkx79+0gszvO9A1XMav0T0f5RhNHgxZHOc6e9FhTgLtmvWjwNVCDhex5xmTWYpg+4nN3ZnFTLQ==}
+  reactjs-tiptap-editor@1.0.17:
+    resolution: {integrity: sha512-auO91utAhtH8FKVHZVAKWyiOBbaZoSSU86k/XtFDQWBhu+YbD7F37Wx1SQDr5ZnrRR7qnFZ8hQeoCit9XA2/Kg==}
     engines: {node: '>=18.0.0'}
 
   read-cache@1.0.0:
@@ -7940,7 +7940,7 @@ snapshots:
       alien-signals: 3.1.2
       react: 19.1.0
 
-  reactjs-tiptap-editor@1.0.16(@types/react-dom@19.1.1(@types/react@19.1.0))(@types/react@19.1.0)(alien-signals@3.1.2)(emojibase@17.0.0)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.2):
+  reactjs-tiptap-editor@1.0.17(@types/react-dom@19.1.1(@types/react@19.1.0))(@types/react@19.1.0)(alien-signals@3.1.2)(emojibase@17.0.0)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-view@1.39.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.2):
     dependencies:
       '@excalidraw/excalidraw': 0.18.0(@types/react-dom@19.1.1(@types/react@19.1.0))(@types/react@19.1.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@floating-ui/dom': 1.7.4
