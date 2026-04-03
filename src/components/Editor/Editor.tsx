@@ -133,13 +133,18 @@ import {
   RichTextBubbleVideo,
   RichTextBubbleMenuDragHandle,
   RichTextBubbleCallout,
+  RichTextBubbleCodeBlock,
 } from 'reactjs-tiptap-editor/bubble';
+import { createLowlight } from 'lowlight';
+import css from 'highlight.js/lib/languages/css';
+import js from 'highlight.js/lib/languages/javascript';
+import ts from 'highlight.js/lib/languages/typescript';
+import html from 'highlight.js/lib/languages/xml';
+import bash from 'highlight.js/lib/languages/bash';
 
 import '@excalidraw/excalidraw/index.css';
 import 'easydrawer/styles.css';
 import 'katex/dist/katex.min.css';
-import 'prism-code-editor-lightweight/layout.css';
-import 'prism-code-editor-lightweight/themes/github-dark.css';
 import 'reactjs-tiptap-editor/style.css';
 
 import { Header, NavBar } from '@/components/Editor/Header';
@@ -160,6 +165,17 @@ function convertBase64ToBlob(base64: string) {
   }
   return new Blob([u8arr], { type: mime });
 }
+
+// create a lowlight instance with all languages loaded
+const lowlight = createLowlight();
+
+// This is only an example, all supported languages are already loaded above
+// but you can also register only specific languages to reduce bundle-size
+lowlight.register('html', html);
+lowlight.register('css', css);
+lowlight.register('js', js);
+lowlight.register('ts', ts);
+lowlight.register('bash', bash);
 
 // custom document to support columns
 const DocumentColumn = /* @__PURE__ */ Document.extend({
@@ -287,8 +303,9 @@ const extensions = [
   Blockquote,
   HorizontalRule,
   Code,
-  CodeBlock,
-
+  CodeBlock.configure({
+    lowlight,
+  }),
   Column,
   ColumnNode,
   MultipleColumnNode,
@@ -374,7 +391,7 @@ const extensions = [
   Callout,
 ];
 
-const DEFAULT = `<h1 dir="auto" style="text-align: center">Rich Text Editor</h1><p dir="auto" style="text-align: center">A modern WYSIWYG rich text editor based on <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://github.com/scrumpy/tiptap">tiptap</a> and <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn</a> for Reactjs</p><p dir="auto"></p><p dir="auto"><div style="text-align: center;" class="image"><img style="" dir="auto" src="https://picsum.photos/1920/1080.webp?t=1" width="303" flipx="false" flipy="false" align="center" inline="false"></div></p><p dir="auto"></p><h2 dir="auto">Features</h2><ul dir="auto"><li dir="auto"><p dir="auto">Use React, tailwindcss, <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn</a> components</p></li><li dir="auto"><p dir="auto">I18n support (vi, en, zh, pt, ...)</p></li><li dir="auto"><p dir="auto">Slash Commands (type <code>/</code> to show menu list)</p></li><li dir="auto"><p dir="auto">Multi Column</p></li><li dir="auto"><p dir="auto">Support emoji <span dir="auto" data-name="100" data-type="emoji">💯</span> (type <code>:</code> to show emoji list)</p></li><li dir="auto"><p dir="auto">Support iframe</p></li><li dir="auto"><p dir="auto">Support mermaid</p></li><li dir="auto"><p dir="auto">Support mention <span class="mention" data-type="mention" dir="auto" data-id="0" data-label="hunghg255" data-mention-suggestion-char="@">@hunghg255</span> (type <code>@</code> to show list)</p></li><li dir="auto"><p dir="auto">Suport katex math (<span class="katex" dir="auto" text="c%20%3D%20%5Cpm%5Csqrt%7Ba%5E2%20%2B%20b%5E2%7D" macros=""></span>)</p></li></ul><h2 dir="auto">Installation</h2><pre dir="auto" code="pnpm install reactjs-tiptap-editor@latest" language="bash" linenumbers="true" wordwrap="false" tabsize="2" shouldfocus="false"><code>pnpm install reactjs-tiptap-editor@latest</code></pre><p dir="auto"></p>`;
+const DEFAULT = `<h1 dir="auto" style="text-align: center;">Rich Text Editor</h1><p dir="auto" style="text-align: center;">A modern WYSIWYG rich text editor based on <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://github.com/scrumpy/tiptap">tiptap</a> and <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn</a> for Reactjs</p><p dir="auto"></p><p dir="auto"><div class="image" style="text-align: center;"><img dir="auto" src="https://picsum.photos/1920/1080.webp?t=1" width="303" flipx="false" flipy="false" align="center" inline="false" style=""></div></p><h2 dir="auto">Features</h2><ul dir="auto"><li dir="auto"><p dir="auto">Use React, tailwindcss, <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn</a> components</p></li><li dir="auto"><p dir="auto">I18n support (vi, en, zh, pt, ...)</p></li><li dir="auto"><p dir="auto">Slash Commands (type <code>/</code> to show menu list)</p></li><li dir="auto"><p dir="auto">Multi Column</p></li><li dir="auto"><p dir="auto">Support emoji <span dir="auto" data-name="100" data-type="emoji">💯</span> (type <code>:</code> to show emoji list)</p></li><li dir="auto"><p dir="auto">Support iframe</p></li><li dir="auto"><p dir="auto">Support mermaid</p></li><li dir="auto"><p dir="auto">Support mention <span class="mention" data-type="mention" dir="auto" data-id="0" data-label="hunghg255" data-mention-suggestion-char="@">@hunghg255</span> (type <code>@</code> to show list)</p></li><li dir="auto"><p dir="auto">Suport katex math (<span class="katex" dir="auto" text="c%20%3D%20%5Cpm%5Csqrt%7Ba%5E2%20%2B%20b%5E2%7D" macros=""></span>)</p></li></ul><h2 dir="auto">Installation</h2><pre dir="auto"><code>pnpm install reactjs-tiptap-editor@latest</code></pre><p dir="auto"></p>;
 
 function debounce(func: any, wait: number) {
   let timeout: NodeJS.Timeout;
@@ -498,6 +515,7 @@ function App() {
               <RichTextBubbleText />
               <RichTextBubbleTwitter />
               <RichTextBubbleCallout />
+              <RichTextBubbleCodeBlock />
 
               {/* Command List */}
               <SlashCommandList />
