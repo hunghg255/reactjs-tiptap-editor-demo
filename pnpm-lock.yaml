@@ -81,8 +81,8 @@ dependencies:
     specifier: ^3.2.2
     version: 3.2.2
   reactjs-tiptap-editor:
-    specifier: ^1.0.20
-    version: 1.0.20(@tiptap/extension-code-block@3.22.1)(@types/react-dom@19.2.3)(@types/react@19.2.14)(alien-signals@3.1.2)(emojibase@17.0.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.8)(react-dom@19.2.4)(react@19.2.4)(typescript@5.9.3)
+    specifier: ^1.0.21
+    version: 1.0.21(@tiptap/extension-code-block@3.22.1)(@types/react-dom@19.2.3)(@types/react@19.2.14)(alien-signals@3.1.2)(emojibase@17.0.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.8)(react-dom@19.2.4)(react@19.2.4)(typescript@5.9.3)
   tailwind-merge:
     specifier: ^3.4.0
     version: 3.5.0
@@ -6597,8 +6597,8 @@ packages:
       react: 19.2.4
     dev: false
 
-  /reactjs-tiptap-editor@1.0.20(@tiptap/extension-code-block@3.22.1)(@types/react-dom@19.2.3)(@types/react@19.2.14)(alien-signals@3.1.2)(emojibase@17.0.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.8)(react-dom@19.2.4)(react@19.2.4)(typescript@5.9.3):
-    resolution: {integrity: sha512-ID7kIHJrH8k4+n14nq6WfkFAaWR1rYekEiglTrcE8FwFWYx05AiySFaanoVaRV7eqPzCKg9H53HElLQh2hZw8g==}
+  /reactjs-tiptap-editor@1.0.21(@tiptap/extension-code-block@3.22.1)(@types/react-dom@19.2.3)(@types/react@19.2.14)(alien-signals@3.1.2)(emojibase@17.0.0)(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.8)(react-dom@19.2.4)(react@19.2.4)(typescript@5.9.3):
+    resolution: {integrity: sha512-/U6y1aVXmQXnK2bGWufHeS2wlCZE8NOrEOWgnMRcywKVFjHuoh5Af4ch0J/EF+WZhm20Q1voKET+axN0CQ+f2g==}
     engines: {node: '>=18.0.0'}
     dependencies:
       '@excalidraw/excalidraw': 0.18.0(@types/react-dom@19.2.3)(@types/react@19.2.14)(react-dom@19.2.4)(react@19.2.4)
