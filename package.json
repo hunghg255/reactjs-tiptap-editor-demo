@@ -21,7 +21,7 @@
     "@tiptap/extension-text": "^3.13.0",
     "@tiptap/extension-text-style": "^3.13.0",
     "@tiptap/extensions": "^3.13.0",
-    "@tiptap/react": "^3.13.0",
+    "@tiptap/react": "3.27.1",
     "@types/lodash": "^4.17.21",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -34,7 +34,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-fast-compare": "^3.2.2",
-    "reactjs-tiptap-editor": "^1.0.26",
+    "reactjs-tiptap-editor": "^1.0.29",
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7"
   },
