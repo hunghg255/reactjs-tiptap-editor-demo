@@ -17,6 +17,7 @@ import {
 } from '@tiptap/extensions';
 
 // build extensions
+import { AI } from 'reactjs-tiptap-editor/ai';
 import {
   Attachment,
   RichTextAttachment,
@@ -366,6 +367,15 @@ const extensions = [
         },
       },
     ],
+  }),
+  AI.configure({
+    protocol:
+      process.env.NEXT_PUBLIC_AI_PROTOCOL === 'anthropic'
+        ? 'anthropic'
+        : 'openai',
+    apiKey: process.env.NEXT_PUBLIC_AI_API_KEY || '',
+    model: process.env.NEXT_PUBLIC_AI_MODEL || '',
+    baseURL: process.env.NEXT_PUBLIC_AI_BASE_URL || '',
   }),
   SlashCommand,
   CodeView,
