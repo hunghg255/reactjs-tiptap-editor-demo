@@ -144,7 +144,6 @@ import 'reactjs-tiptap-editor/style.css';
 
 import { Header, NavBar } from '@/components/Editor/Header';
 import { EditorContent, useEditor } from '@tiptap/react';
-import 'katex/contrib/mhchem';
 import { CharacterCount } from '@tiptap/extensions';
 import { Count } from '@/components/Editor/extension/Count';
 import { EMOJI_LIST } from '@/components/Editor/emojis';
@@ -311,7 +310,15 @@ const extensions = [
       });
     },
   }),
-  Katex,
+  Katex.configure({
+    loadKatex: async () => {
+      const [{ default: katex }] = await Promise.all([
+        import('katex'),
+        import('katex/contrib/mhchem'),
+      ]);
+      return katex;
+    },
+  }),
   Excalidraw,
   Mermaid.configure({
     upload: (file: any) => {
