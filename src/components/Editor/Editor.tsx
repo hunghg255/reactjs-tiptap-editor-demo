@@ -117,6 +117,8 @@ import {
   SlashCommandList,
 } from 'reactjs-tiptap-editor/slashcommand';
 
+import { ShortMessage } from 'reactjs-tiptap-editor/shortmessage';
+
 // Bubble
 import {
   RichTextBubbleColumns,
@@ -387,9 +389,24 @@ const extensions = [
   SlashCommand,
   CodeView,
   Callout,
+  ShortMessage.configure({
+    messages: [
+      { short: 'nsfw', long_content: 'Not safe forward' },
+      { short: 'brb', long_content: 'Be right back' },
+      { short: 'sig', long_content: '<p>Best regards,<br><strong>Alex</strong></p>' },
+      { short: 'ty', long_content: 'Thank you' },
+      { short: 'yw', long_content: 'You are welcome' },
+      { short: 'omw', long_content: 'On my way' },
+      { short: 'fyi', long_content: 'For your information' },
+      { short: 'asap', long_content: 'As soon as possible' },
+      { short: 'idk', long_content: "I don't know" },
+      { short: 'imo', long_content: 'In my opinion' },
+      { short: 'tba', long_content: 'To be announced' },
+    ],
+  }),
 ];
 
-const DEFAULT = `<h1 dir="auto" style="text-align: center;">Rich Text Editor</h1><p dir="auto" style="text-align: center;">A modern WYSIWYG rich text editor based on <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://github.com/scrumpy/tiptap">tiptap</a> and <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn</a> for Reactjs</p><p dir="auto"></p><div class="image" style="text-align: center;"><img dir="auto" src="https://picsum.photos/1920/1080.webp?t=1" width="303" align="center"></div><p dir="auto"></p><h2 dir="auto">Features</h2><ul dir="auto"><li dir="auto"><p dir="auto">Use React, tailwindcss, <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn</a> components</p></li><li dir="auto"><p dir="auto">I18n support (vi, en, zh, pt, ...)</p></li><li dir="auto"><p dir="auto">Slash Commands (type <code>/</code> to show menu list)</p></li><li dir="auto"><p dir="auto">Multi Column</p></li><li dir="auto"><p dir="auto">Support emoji <span dir="auto" data-name="100" data-type="emoji">💯</span> (type <code>:</code> to show emoji list)</p></li><li dir="auto"><p dir="auto">Support iframe</p></li><li dir="auto"><p dir="auto">Support mermaid</p></li><li dir="auto"><p dir="auto">Support mention <span class="mention" data-type="mention" dir="auto" data-id="0" data-label="hunghg255" data-mention-suggestion-char="@">@hunghg255</span> (type <code>@</code> to show list)</p></li><li dir="auto"><p dir="auto">Suport katex math (<span class="katex" dir="auto" text="c%20%3D%20%5Cpm%5Csqrt%7Ba%5E2%20%2B%20b%5E2%7D" macros=""></span>)</p></li></ul><h2 dir="auto">Installation</h2><pre class="shj" dir="auto"><code class="language-bash">pnpm install reactjs-tiptap-editor@latest</code></pre><p dir="auto"></p>`;
+const DEFAULT = `<h1 dir="auto" style="text-align: center;">Rich Text Editor</h1><p dir="auto" style="text-align: center;">A modern WYSIWYG rich text editor based on <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://github.com/scrumpy/tiptap">tiptap</a> and <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn</a> for Reactjs</p><div class="image" style="text-align: center;"><img dir="auto" src="https://picsum.photos/1920/1080.webp?t=1" width="303" align="center"></div><h2 dir="auto">Features</h2><ul dir="auto"><li dir="auto"><p dir="auto">Use React, tailwindcss, <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn</a> components</p></li><li dir="auto"><p dir="auto">I18n support (vi, en, zh, pt, ...)</p></li><li dir="auto"><p dir="auto">Slash Commands (type <code>/</code> to show menu list)</p></li><li dir="auto"><p dir="auto">Multi Column</p></li><li dir="auto"><p dir="auto">Support emoji <span dir="auto" data-name="100" data-type="emoji">💯</span> (type <code>:</code> to show emoji list)</p></li><li dir="auto"><p dir="auto">Support iframe</p></li><li dir="auto"><p dir="auto">Support mermaid</p></li><li dir="auto"><p dir="auto">Support mention <span class="mention" data-type="mention" dir="auto" data-id="0" data-label="hunghg255" data-mention-suggestion-char="@">@hunghg255</span> (type <code>@</code> to show list)</p></li><li dir="auto"><p dir="auto">Support katex math (<span class="katex" dir="auto" text="c%20%3D%20%5Cpm%5Csqrt%7Ba%5E2%20%2B%20b%5E2%7D" macros=""></span>)</p></li><li dir="auto"><p dir="auto">Support short message </p></li></ul><h2 dir="auto">Installation</h2><pre class="shj" dir="auto"><code class="language-bash">pnpm install reactjs-tiptap-editor@latest</code></pre><p dir="auto"></p>`;
 
 function debounce(func: any, wait: number) {
   let timeout: NodeJS.Timeout;
