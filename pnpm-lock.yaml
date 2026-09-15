@@ -75,8 +75,8 @@ dependencies:
     specifier: ^3.2.2
     version: 3.2.2
   reactjs-tiptap-editor:
-    specifier: ^1.0.43
-    version: 1.0.43(@types/react-dom@19.2.3)(@types/react@19.2.14)(alien-signals@3.2.1)(emojibase@17.0.0)(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.0)(react-dom@19.2.4)(react@19.2.4)(typescript@5.9.3)
+    specifier: ^1.0.45
+    version: 1.0.45(@types/react-dom@19.2.3)(@types/react@19.2.14)(alien-signals@3.2.1)(emojibase@17.0.0)(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.0)(react-dom@19.2.4)(react@19.2.4)(typescript@5.9.3)
   tailwind-merge:
     specifier: ^3.4.0
     version: 3.5.0
@@ -2802,6 +2802,18 @@ packages:
       yjs: 13.6.32
     dev: false
 
+  /@tiptap/extension-details@3.31.3(@tiptap/core@3.29.2)(@tiptap/extension-text-style@3.29.2)(@tiptap/pm@3.29.2):
+    resolution: {integrity: sha512-J5kdZy31wb97iKUR4sDsX0sEyRPlTijKKRAnVbInY2aNdFuNBTBdMPmblEJztxfMN+TmDrU2kCVv72J9B1SrJg==}
+    peerDependencies:
+      '@tiptap/core': 3.31.3
+      '@tiptap/extension-text-style': 3.31.3
+      '@tiptap/pm': 3.31.3
+    dependencies:
+      '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
+      '@tiptap/extension-text-style': 3.29.2(@tiptap/core@3.29.2)
+      '@tiptap/pm': 3.29.2
+    dev: false
+
   /@tiptap/extension-document@3.22.1(@tiptap/core@3.29.2):
     resolution: {integrity: sha512-fBI/+PGtK6pzitqjSSSYL2+uZglX6T53zb5nLEmN/q8q7FzUuUpglp8toHVhBG05WDk4vx6Z7bC95uyxkYdoAA==}
     peerDependencies:
@@ -3053,6 +3065,17 @@ packages:
       '@tiptap/pm': 3.29.2
     dev: false
 
+  /@tiptap/extension-table-of-contents@3.31.3(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2):
+    resolution: {integrity: sha512-A2ZX4Z94HhvlsmumYdYbhvBCQwOSGRuG5TN4CeyhlgTLCQJqy1FSMLJEKeVgjxdejPIm1iTb4DPsqDgj6SP9dw==}
+    peerDependencies:
+      '@tiptap/core': 3.31.3
+      '@tiptap/pm': 3.31.3
+    dependencies:
+      '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
+      '@tiptap/pm': 3.29.2
+      uuid: 14.0.2
+    dev: false
+
   /@tiptap/extension-table@3.29.2(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2):
     resolution: {integrity: sha512-HY3JWD8i/F8W1oWw56DMqEMqxScIAZFRrhL3rUwiuowHG8LLDqDdQjBV3w1DY8lUZOtNY9grpuMtGlPUFrOVAA==}
     peerDependencies:
@@ -3145,6 +3168,17 @@ packages:
     dependencies:
       '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
       '@tiptap/pm': 3.29.2
+    dev: false
+
+  /@tiptap/markdown@3.31.3(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2):
+    resolution: {integrity: sha512-rBbYSxasseUoaBo15C8Yoaqafo7mJJzxwAwV9Z1OpLBvOroW9nQ0EbOdqaSYRw3/d9pP71B/3LNSzKyfyy+dpQ==}
+    peerDependencies:
+      '@tiptap/core': 3.31.3
+      '@tiptap/pm': 3.31.3
+    dependencies:
+      '@tiptap/core': 3.29.2(@tiptap/pm@3.29.2)
+      '@tiptap/pm': 3.29.2
+      marked: 17.0.6
     dev: false
 
   /@tiptap/pm@3.29.2:
@@ -6024,6 +6058,12 @@ packages:
     hasBin: true
     dev: false
 
+  /marked@17.0.6:
+    resolution: {integrity: sha512-gB0gkNafnonOw0obSTEGZTT86IuhILt2Wfx0mWH/1Au83kybTayroZ/V6nS25mN7u8ASy+5fMhgB3XPNrOZdmA==}
+    engines: {node: '>= 20'}
+    hasBin: true
+    dev: false
+
   /math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
     engines: {node: '>= 0.4'}
@@ -6802,8 +6842,8 @@ packages:
       react: 19.2.4
     dev: false
 
-  /reactjs-tiptap-editor@1.0.43(@types/react-dom@19.2.3)(@types/react@19.2.14)(alien-signals@3.2.1)(emojibase@17.0.0)(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.0)(react-dom@19.2.4)(react@19.2.4)(typescript@5.9.3):
-    resolution: {integrity: sha512-xv5Zc2gxKharRqcq4X0q2AUHCRWf3MA3kVl0sCuJ4nnz21fqoa6x0EdRGmAPWWWRPfVPrjGhNOpVEd37R7P5tw==}
+  /reactjs-tiptap-editor@1.0.45(@types/react-dom@19.2.3)(@types/react@19.2.14)(alien-signals@3.2.1)(emojibase@17.0.0)(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.0)(react-dom@19.2.4)(react@19.2.4)(typescript@5.9.3):
+    resolution: {integrity: sha512-e9luM6zRjUxMLUVJHTs/6IaVPqW0/LodfYn4GFFIPwpcWDYBVj98GVeLKLEDwoKOBxfvldFc4FDigBawMGpgfw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
@@ -6833,6 +6873,7 @@ packages:
       '@tiptap/extension-code-block': 3.29.2(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2)
       '@tiptap/extension-collaboration': 3.29.2(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2)(@tiptap/y-tiptap@3.0.8)(yjs@13.6.32)
       '@tiptap/extension-collaboration-caret': 3.29.2(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2)(@tiptap/y-tiptap@3.0.8)
+      '@tiptap/extension-details': 3.31.3(@tiptap/core@3.29.2)(@tiptap/extension-text-style@3.29.2)(@tiptap/pm@3.29.2)
       '@tiptap/extension-document': 3.29.2(@tiptap/core@3.29.2)
       '@tiptap/extension-drag-handle': 3.29.2(@tiptap/core@3.29.2)(@tiptap/extension-collaboration@3.29.2)(@tiptap/extension-node-range@3.29.2)(@tiptap/pm@3.29.2)(@tiptap/y-tiptap@3.0.8)
       '@tiptap/extension-drag-handle-react': 3.29.2(@tiptap/extension-drag-handle@3.29.2)(@tiptap/pm@3.29.2)(@tiptap/react@3.29.2)(react-dom@19.2.4)(react@19.2.4)
@@ -6854,6 +6895,7 @@ packages:
       '@tiptap/extension-subscript': 3.29.2(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2)
       '@tiptap/extension-superscript': 3.29.2(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2)
       '@tiptap/extension-table': 3.29.2(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2)
+      '@tiptap/extension-table-of-contents': 3.31.3(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2)
       '@tiptap/extension-task-item': 3.29.2(@tiptap/extension-list@3.29.2)
       '@tiptap/extension-task-list': 3.29.2(@tiptap/extension-list@3.29.2)
       '@tiptap/extension-text': 3.29.2(@tiptap/core@3.29.2)
@@ -6861,6 +6903,7 @@ packages:
       '@tiptap/extension-text-style': 3.29.2(@tiptap/core@3.29.2)
       '@tiptap/extension-underline': 3.29.2(@tiptap/core@3.29.2)
       '@tiptap/extensions': 3.29.2(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2)
+      '@tiptap/markdown': 3.31.3(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2)
       '@tiptap/pm': 3.29.2
       '@tiptap/react': 3.29.2(@floating-ui/dom@1.8.0)(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2)(@types/react-dom@19.2.3)(@types/react@19.2.14)(react-dom@19.2.4)(react@19.2.4)
       '@tiptap/suggestion': 3.29.2(@floating-ui/dom@1.8.0)(@tiptap/core@3.29.2)(@tiptap/pm@3.29.2)
@@ -7667,6 +7710,11 @@ packages:
 
   /uuid@11.1.0:
     resolution: {integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==}
+    hasBin: true
+    dev: false
+
+  /uuid@14.0.2:
+    resolution: {integrity: sha512-xZe/16rV4aa+HGSOCiY2YeLT1OybRLrrkL/Rqaq7p7GMVXjFh+6wN4oMYgjFmnSnhY8t6Xpdl2l9qmnHYuMHwQ==}
     hasBin: true
     dev: false
 

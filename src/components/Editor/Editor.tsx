@@ -118,6 +118,10 @@ import {
 } from 'reactjs-tiptap-editor/slashcommand';
 
 import { ShortMessage } from 'reactjs-tiptap-editor/shortmessage';
+import { MarkdownPaste } from 'reactjs-tiptap-editor/markdownpaste';
+import { TableOfContents, RichTextTableOfContents } from 'reactjs-tiptap-editor/tableofcontents';
+import { Details, RichTextDetails } from 'reactjs-tiptap-editor/details';
+import { ExportMarkdown, RichTextExportMarkdown } from 'reactjs-tiptap-editor/exportmarkdown';
 
 // Bubble
 import {
@@ -297,6 +301,7 @@ const extensions = [
   ExportPdf,
   ImportWord,
   ExportWord,
+  ExportMarkdown,
   TextDirection,
   Attachment.configure({
     upload: (file: any) => {
@@ -404,6 +409,9 @@ const extensions = [
       { short: 'tba', long_content: 'To be announced' },
     ],
   }),
+    Details,
+  TableOfContents,
+  MarkdownPaste
 ];
 
 const DEFAULT = `<h1 dir="auto" style="text-align: center;">Rich Text Editor</h1><p dir="auto" style="text-align: center;">A modern WYSIWYG rich text editor based on <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://github.com/scrumpy/tiptap">tiptap</a> and <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn</a> for Reactjs</p><div class="image" style="text-align: center;"><img dir="auto" src="https://picsum.photos/1920/1080.webp?t=1" width="303" align="center"></div><h2 dir="auto">Features</h2><ul dir="auto"><li dir="auto"><p dir="auto">Use React, tailwindcss, <a target="_blank" rel="noopener noreferrer nofollow" class="link" href="https://ui.shadcn.com/">shadcn</a> components</p></li><li dir="auto"><p dir="auto">I18n support (vi, en, zh, pt, ...)</p></li><li dir="auto"><p dir="auto">Slash Commands (type <code>/</code> to show menu list)</p></li><li dir="auto"><p dir="auto">Multi Column</p></li><li dir="auto"><p dir="auto">Support emoji <span dir="auto" data-name="100" data-type="emoji">💯</span> (type <code>:</code> to show emoji list)</p></li><li dir="auto"><p dir="auto">Support iframe</p></li><li dir="auto"><p dir="auto">Support mermaid</p></li><li dir="auto"><p dir="auto">Support mention <span class="mention" data-type="mention" dir="auto" data-id="0" data-label="hunghg255" data-mention-suggestion-char="@">@hunghg255</span> (type <code>@</code> to show list)</p></li><li dir="auto"><p dir="auto">Support katex math (<span class="katex" dir="auto" text="c%20%3D%20%5Cpm%5Csqrt%7Ba%5E2%20%2B%20b%5E2%7D" macros=""></span>)</p></li><li dir="auto"><p dir="auto">Support short message </p></li></ul><h2 dir="auto">Installation</h2><pre class="shj" dir="auto"><code class="language-bash">pnpm install reactjs-tiptap-editor@latest</code></pre><p dir="auto"></p>`;
@@ -455,6 +463,8 @@ const RichTextToolbar = () => {
       <RichTextExportPdf />
       <RichTextImportWord />
       <RichTextExportWord />
+      <RichTextExportMarkdown />
+
       <RichTextTextDirection />
       <RichTextAttachment />
       <RichTextKatex />
@@ -464,6 +474,8 @@ const RichTextToolbar = () => {
       <RichTextTwitter />
       <RichTextCodeView />
       <RichTextCallout />
+            <RichTextDetails />
+      <RichTextTableOfContents />
     </div>
   );
 };
