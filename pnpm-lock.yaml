@@ -75,8 +75,8 @@ dependencies:
     specifier: ^3.2.2
     version: 3.2.2
   reactjs-tiptap-editor:
-    specifier: ^1.0.45
-    version: 1.0.45(@types/react-dom@19.2.3)(@types/react@19.2.14)(alien-signals@3.2.1)(emojibase@17.0.0)(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.0)(react-dom@19.2.4)(react@19.2.4)(typescript@5.9.3)
+    specifier: ^1.0.46
+    version: 1.0.46(@types/react-dom@19.2.3)(@types/react@19.2.14)(alien-signals@3.2.1)(emojibase@17.0.0)(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.0)(react-dom@19.2.4)(react@19.2.4)(typescript@5.9.3)
   tailwind-merge:
     specifier: ^3.4.0
     version: 3.5.0
@@ -6095,7 +6095,7 @@ packages:
       roughjs: 4.6.6
       stylis: 4.3.6
       ts-dedent: 2.2.0
-      uuid: 11.1.0
+      uuid: 14.0.2
     dev: false
 
   /micromatch@4.0.8:
@@ -6842,9 +6842,9 @@ packages:
       react: 19.2.4
     dev: false
 
-  /reactjs-tiptap-editor@1.0.45(@types/react-dom@19.2.3)(@types/react@19.2.14)(alien-signals@3.2.1)(emojibase@17.0.0)(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.0)(react-dom@19.2.4)(react@19.2.4)(typescript@5.9.3):
-    resolution: {integrity: sha512-e9luM6zRjUxMLUVJHTs/6IaVPqW0/LodfYn4GFFIPwpcWDYBVj98GVeLKLEDwoKOBxfvldFc4FDigBawMGpgfw==}
-    engines: {node: '>=18.0.0'}
+  /reactjs-tiptap-editor@1.0.46(@types/react-dom@19.2.3)(@types/react@19.2.14)(alien-signals@3.2.1)(emojibase@17.0.0)(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(prosemirror-view@1.42.0)(react-dom@19.2.4)(react@19.2.4)(typescript@5.9.3):
+    resolution: {integrity: sha512-8Oj3+J8J7x1PsiwrC9erhciXqj6AC49ELpfmAefRM1K4CRACJ2T1cFaSQCzaLR/0cFp4pHv67u2nHImRdA3vtQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
@@ -7707,11 +7707,6 @@ packages:
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
-
-  /uuid@11.1.0:
-    resolution: {integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==}
-    hasBin: true
-    dev: false
 
   /uuid@14.0.2:
     resolution: {integrity: sha512-xZe/16rV4aa+HGSOCiY2YeLT1OybRLrrkL/Rqaq7p7GMVXjFh+6wN4oMYgjFmnSnhY8t6Xpdl2l9qmnHYuMHwQ==}
